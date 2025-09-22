@@ -1,0 +1,45 @@
+{
+    "query": "Latest news on Artificial Intelligence",
+    "follow_up_questions": null,
+    "answer": null,
+    "images": [],
+    "results": [
+        {
+            "url": "https://www.nbcnews.com/artificial-intelligence",
+            "title": "Artificial intelligence - NBC News",
+            "content": "The latest news and top stories on artificial intelligence, including AI chatbots like Microsoft's ChatGPT, Apple's AI Chatbot and Google's Bard.",
+            "score": 0.81025416,
+            "raw_content": null
+        },
+        {
+            "url": "https://www.crescendo.ai/news/latest-ai-news-and-updates",
+            "title": "The Latest AI News and AI Breakthroughs that Matter Most: 2025",
+            "content": "Summary: DeepCogito v2, an open-source AI model, has been released with improved logical reasoning and task planning. Developers say it outperforms many closed",
+            "score": 0.767847,
+            "raw_content": null
+        },
+        {
+            "url": "https://analyticsindiamag.com/ai-news-updates/",
+            "title": "Latest AI News, Updates and Launches - Analytics India Magazine",
+            "content": "Latest in AI News \u00b7 Google Brings 10 New AI Features to Chrome, Including Gemini Integration \u00b7 Jensen Huang Says NVIDIA is Confident in Intel After $5 Billion",
+            "score": 0.756376,
+            "raw_content": null
+        },
+        {
+            "url": "https://www.artificialintelligence-news.com/",
+            "title": "AI News | Latest AI News, Analysis & Events",
+            "content": "SoftBank chief: Forget AGI, ASI will be here within 10 years \u00b7 Malaysia launches Ryt Bank, its first AI-powered bank \u00b7 Google's Veo 3 AI video creation tools",
+            "score": 0.7507177,
+            "raw_content": null
+        },
+        {
+            "url": "https://www.wsj.com/tech/ai?gaa_at=eafs&gaa_n=ASWzDAh3vk2a87Q8ZcUQIGQryenbcuciw4eyAAuYSnQV24slDvlFrDavwsqV&gaa_ts=68cd17ba&gaa_sig=pkvMfHgR2m58VwK9EHN4T2v1rC6s6ainsDxV9yXtoumtBFPPQd5dDqtcW4wO54BoGXjumGJioCkywzbkIWSYlA%3D%3D",
+            "title": "Artificial Intelligence - Latest AI News and Analysis - WSJ.com",
+            "content": "AI Is Going to Consume a Lot of Energy. It Can Also Help Us Consume Less. The technology has the potential to slash energy demand across a swath of industries.",
+            "score": 0.7045877,
+            "raw_content": null
+        }
+    ],
+    "response_time": 0.78,
+    "request_id": "2dba09a0-5f18-4de8-897b-32ab1e43939b"
+}
