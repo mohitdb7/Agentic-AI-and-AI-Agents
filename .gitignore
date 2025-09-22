@@ -1,0 +1,37 @@
+# Ignore all __pycache__ directories recursively
+**/__pycache__/
+
+# Optional: also ignore Python bytecode files
+*.py[cod]
+.DS_Store
+
+# Ignore .env files everywhere
+**/.env
+
+# Ignore .txt files everywhere
+**/*.txt
+
+**/Keys
+
+.venv/
+venv/
+Keys/gemini_API_Key.txt
+Keys/linkedIn.txt
+Keys/gemini_API_Key.txt
+
+# Ignore Pickle files
+*.pkl
+*.pickle
+**/*.pickle
+**/*.pkl
+
+
+# Ignore uv lock file
+uv.lock
+**/uv.lock
+
+**/credentials.json
+
+.vscode
+.vscode/
+**/.vscode/
