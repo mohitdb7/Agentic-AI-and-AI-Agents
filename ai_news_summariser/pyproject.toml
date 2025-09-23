@@ -14,10 +14,12 @@ dependencies = [
     "langchain-google-genai>=2.1.12",
     "langchain-openai>=0.3.33",
     "langgraph>=0.6.7",
+    "motor>=3.7.1",
     "pathlib>=1.0.1",
     "pydantic>=2.11.9",
     "sseclient>=0.0.27",
     "tavily-python>=0.7.12",
     "torch>=2.8.0",
     "transformers>=4.56.1",
+    "uvicorn>=0.36.0",
 ]
