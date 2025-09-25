@@ -6,6 +6,7 @@ from news_agent_flow.models import SummarisedNewsArticle
 from news_agent_flow.models import GenreSumarisedModel, FinalGenreSummaryModel
 from news_agent_flow.tools import GenreManager
 from news_agent_flow.agents import NewsSummariser
+import time
 
 # from agents import news_summariser
 
@@ -35,6 +36,8 @@ def search_web_for_news(state: NewsAgentState) -> NewsAgentState:
     with open("mock_run/json_files/tavily_AI_response.json", "w", encoding="utf-8") as f:
         json.dump(result.model_dump(), f, indent=4)
 
+    time.sleep(5)
+
     return {
         "query": state["query"],
         "results_search": result
@@ -57,6 +60,7 @@ def crawl_news_content(state: NewsAgentState) -> TavilyCrawlListModel:
     with open("mock_run/json_files/tavily_AI_crawl.json", "w", encoding="utf-8") as f:
         json.dump([item.model_dump() for item in result] if is_list_of_Crawl(result) else result, f, indent=4)
 
+    time.sleep(5)
     return {
         "query": state["query"],
         "results_search": state["results_search"],
@@ -83,6 +87,8 @@ def summarise_news(state: NewsAgentState) -> NewsAgentState:
     with open("mock_run/json_files/tavily_AI_Summary.json", "w", encoding="utf-8") as f:
         json.dump([item.model_dump() for item in result], f, indent=4)
 
+    time.sleep(5)
+
     return {
         "query": state["query"],
         "results_search": state["results_search"],
@@ -98,6 +104,8 @@ def assign_genre(state: NewsAgentState) -> NewsAgentState:
 
     with open("mock_run/json_files/tavily_AI_Genre_Summary.json", "w", encoding="utf-8") as f:
         json.dump(result.model_dump(), f, indent=4)
+
+    time.sleep(5)
 
     return {
         "query": state["query"],
@@ -122,6 +130,8 @@ def final_genre_summary(state: NewsAgentState) -> NewsAgentState:
 
     with open("mock_run/json_files/tavily_AI_Final_Summarised_Genre.json", "w", encoding="utf-8") as f:
         json.dump(out_obj.model_dump(), f, indent=4)
+
+    time.sleep(5)
 
     return {
         "query": None,

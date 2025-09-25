@@ -12,8 +12,7 @@ from rest_api import MongoDBCRUD
 from rest_api.models import NewsSummaryResult
 from datetime import datetime, timezone
 
-
-
+import time
 import os
 import sys
 
@@ -25,11 +24,14 @@ from news_agent_flow.models import OutputGenreSummarisedResponseModel
 #Initialise the FastAPI
 app = FastAPI(title="News Summariser")
 
-# MongoDB setup
-MONGO_DETAILS = "mongodb://localhost:27017"
-client = AsyncIOMotorClient(MONGO_DETAILS)
-db = client.news_summary_db
-collection = db.news_summary
+try:
+    # MongoDB setup
+    MONGO_DETAILS = "mongodb://localhost:27017"
+    client = AsyncIOMotorClient(MONGO_DETAILS)
+    db = client.news_summary_db
+    collection = db.news_summary
+except Exception as e:
+    print(f"Exception in starting the mongo db {e}")
 
 #Graph instance
 graph = create_news_agent_flow()
@@ -37,10 +39,13 @@ graph = create_news_agent_flow()
 
 @app.on_event("startup")
 async def startup_event():
-    # Create TTL index on createdAt (expire after 3600 seconds)
-    await collection.create_index("createdAt", expireAfterSeconds=5*60)
-    # Create index on genre string
-    await collection.create_index([("genre", 1)], unique=True)
+    try:
+        # Create TTL index on createdAt (expire after 3600 seconds)
+        await collection.create_index("createdAt", expireAfterSeconds=5*60)
+        # Create index on genre string
+        await collection.create_index([("genre", 1)], unique=True)
+    except Exception as e:
+        print(f"Exception in starting the mongo db {e}")
 
 class StreamRequest(BaseModel):
     items: List[str]
@@ -81,6 +86,7 @@ async def news_agent_stream(query: str):
                 }
         yield f"data:{json.dumps(output)}\n\n"
         results_in_store = True
+        time.sleep(5)
 
     if results_in_store:
         return
