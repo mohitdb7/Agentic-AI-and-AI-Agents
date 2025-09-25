@@ -7,12 +7,24 @@ import json
 import re
 import html
 from bs4 import BeautifulSoup
+from collections import defaultdict
 # The following import is crucial for binding the thread to the Streamlit context
 from streamlit.runtime.scriptrunner import add_script_run_ctx 
-from models import WebResponseModel, SummarisedNewsArticleModel
+from models import WebResponseModel, SummarisedNewsArticleModel, NewsGenredSummaryModel
 
 
 GENRES = ["Politics", "Technology", "AI", "Sports", "Business", "Health"]
+
+# Genre colors for visual distinction
+GENRE_COLORS = {
+    "Politics": "#FF6B6B",
+    "Technology": "#4ECDC4", 
+    "AI": "#45B7D1",
+    "Sports": "#96CEB4",
+    "Business": "#FFEAA7",
+    "Health": "#DDA0DD",
+    "General": "#6C5CE7"
+}
 
 # At the top of your script, outside any function
 msg_queue = queue.Queue()
@@ -63,6 +75,205 @@ def parse_news_summaries(nodes_result):
         items.append(item_node_dict)
     return items
 
+def parse_with_news_genre(nodes_result):
+    """Parse genre-assigned news items into grouped dictionary."""
+    print("Categories data:", nodes_result["categories"])
+    result = NewsGenredSummaryModel(**nodes_result["categories"])
+    
+    # Convert to our internal format
+    grouped_articles = {}
+    for genre, articles in result.root.items():
+        article_list = []
+        for article in articles:
+            article_dict = {
+                "title": article.title if article.title else "",
+                "description": clean_html_and_entities(article.summary) if article.summary else "",
+                "url": article.url,
+                "genre": genre
+            }
+            article_list.append(article_dict)
+        grouped_articles[genre] = article_list
+    
+    return grouped_articles
+
+def render_genre_timeline(grouped_articles):
+    """Render articles grouped by genre in a timeline/chain view."""
+    
+    # Timeline CSS
+    st.markdown("""
+        <style>
+        .timeline-container {
+            max-height: 600px;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+        
+        .genre-section {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .genre-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px 20px;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .genre-badge {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-left: 15px;
+            font-size: 14px;
+            font-weight: normal;
+            backdrop-filter: blur(10px);
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 30px;
+            top: 70px;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #444, transparent);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-left: 60px;
+            margin-bottom: 25px;
+            padding: 20px 25px;
+            background: #1e1e1e;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            color: #eee;
+            border-left: 4px solid;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -45px;
+            top: 25px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid;
+            z-index: 1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .timeline-item h4 {
+            margin: 0 0 12px 0;
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        
+        .timeline-item p {
+            margin: 0 0 15px 0;
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .timeline-item a {
+            color: #4da6ff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .timeline-item a:hover {
+            text-decoration: underline;
+            color: #66b3ff;
+        }
+        
+        .article-count {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Scrollbar styling */
+        .timeline-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .timeline-container::-webkit-scrollbar-track {
+            background: #262730;
+            border-radius: 4px;
+        }
+
+        .timeline-container::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 4px;
+        }
+
+        .timeline-container::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
+    st.markdown('<div class="timeline-container">', unsafe_allow_html=True)
+    
+    for genre, articles in grouped_articles.items():
+        genre_color = GENRE_COLORS.get(genre, "#6C5CE7")
+        article_count = len(articles)
+        
+        # Genre header
+        st.markdown(f"""
+            <div class="genre-section">
+                <div class="genre-header" style="background: {genre_color};">
+                    <span>📰 {genre}</span>
+                    <span class="genre-badge">{article_count} article{'s' if article_count != 1 else ''}</span>
+                </div>
+                <div class="timeline-line"></div>
+        """, unsafe_allow_html=True)
+        
+        # Articles for this genre
+        for i, article in enumerate(articles):
+            title = article.get("title", "No Title")
+            description = article.get("description", "")
+            url = article.get("url", "")
+            
+            # Truncate description if too long
+            if len(description) > 200:
+                description = description[:200] + "..."
+            
+            st.markdown(f"""
+                <div class="timeline-item" style="border-left-color: {genre_color};">
+                    <div class="timeline-dot" style="border-color: {genre_color};"></div>
+                    <h4>{title}</h4>
+                    <p>{description}</p>
+                    {"<a href='" + url + "' target='_blank'>📖 Read full article</a>" if url else ""}
+                    <div class="article-count">Article {i + 1} of {article_count}</div>
+                </div>
+            """, unsafe_allow_html=True)
+        
+        st.markdown('</div>', unsafe_allow_html=True)
+    
+    st.markdown('</div>', unsafe_allow_html=True)
 
 def stream_from_api(url, msg_queue, stop_event, params):
     """Background thread that streams data and sends it to the queue."""
@@ -96,9 +307,13 @@ def stream_from_api(url, msg_queue, stop_event, params):
                 news_items = parse_news_items(node_result)
                 msg_queue.put({"type": "news_item", "data": news_items})
 
-            if node_name == "summarise_the_news":
+            elif node_name == "summarise_the_news":
                 news_items = parse_news_summaries(node_result)
                 msg_queue.put({"type": "news_item_summary", "data": news_items})
+            
+            elif node_name == "assign_genre":
+                genred_news_items = parse_with_news_genre(node_result)
+                msg_queue.put({"type": "genre_assigned", "data": genred_news_items})
 
             elif node_name == "final_genre_summary":
                 msg_queue.put({"type": "summary_done"})
@@ -119,8 +334,11 @@ def main():
     if "news_items" not in st.session_state:
         st.session_state.news_items = []
 
+    if "genre_articles" not in st.session_state:
+        st.session_state.genre_articles = {}
+
     if "stream_status" not in st.session_state:
-        st.session_state.stream_status = "idle"  # idle, fetching, summarizing, complete
+        st.session_state.stream_status = "idle"  # idle, fetching, summarizing, assigning_genre, complete
 
     # Use the global queue objects
     if "msg_queue" not in st.session_state:
@@ -134,6 +352,7 @@ def main():
         st.session_state.streaming = True
         st.session_state.stop_event.clear()
         st.session_state.news_items = []
+        st.session_state.genre_articles = {}
         st.session_state.stream_status = "fetching"
         
         # Clear the queue from any previous runs
@@ -164,6 +383,8 @@ def main():
             st.info("🔍 Fetching news articles...")
         elif st.session_state.stream_status == "summarizing":
             st.info("📝 Summarizing news articles...")
+        elif st.session_state.stream_status == "assigning_genre":
+            st.info("🏷️ Assigning genres to articles...")
 
 # ----------------------------------------------------------------------
 # --- CORE FIX: Process Queue Messages WITHOUT Blocking UI ---
@@ -188,6 +409,12 @@ def main():
                     
                 elif msg["type"] == "news_item_summary":
                     st.session_state.news_items = msg["data"]
+                    st.session_state.stream_status = "assigning_genre"
+                    should_rerun = True
+                    
+                elif msg["type"] == "genre_assigned":
+                    st.session_state.genre_articles = msg["data"]
+                    st.session_state.stream_status = "assigning_genre"
                     should_rerun = True
                     
                 elif msg["type"] == "summary_done":
@@ -212,10 +439,33 @@ def main():
 # --- UI Rendering (Always Happens) ---
 # ----------------------------------------------------------------------
 
-    st.subheader("🗞️ News Items")
+    st.subheader("🗞️ News Articles")
     
-    # Always render the news items container
-    if st.session_state.news_items:
+    # Render genre-based articles if available
+    if st.session_state.genre_articles:
+        # Show genre summary metrics
+        total_articles = sum(len(articles) for articles in st.session_state.genre_articles.values())
+        genre_count = len(st.session_state.genre_articles)
+        
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Total Articles", total_articles)
+        with col2:
+            st.metric("Genres Covered", genre_count)
+        with col3:
+            if st.session_state.genre_articles:
+                most_articles_genre = max(st.session_state.genre_articles.items(), key=lambda x: len(x[1]))
+                st.metric("Top Genre", f"{most_articles_genre[0]} ({len(most_articles_genre[1])})")
+        
+        st.markdown("---")
+        
+        # Render timeline/chain view
+        render_genre_timeline(st.session_state.genre_articles)
+        
+    # Fallback: Render regular news items if genre articles not ready
+    elif st.session_state.news_items:
+        st.info("📋 Processing articles for genre assignment...")
+        
         # Inject card CSS
         st.markdown("""
             <style>
@@ -246,8 +496,6 @@ def main():
             }
             </style>
         """, unsafe_allow_html=True)
-        # Start the scrollable container
-        st.markdown('<div class="scrollable-news">', unsafe_allow_html=True)
 
         # Render each news item as a card
         for item in st.session_state.news_items:
@@ -262,9 +510,7 @@ def main():
                     {"<a href='" + url + "' target='_blank'>Read full article</a>" if url else ""}
                 </div>
             """, unsafe_allow_html=True)
-
-        # End the scrollable container
-        st.markdown('</div>', unsafe_allow_html=True)
+            
     else:
         if not st.session_state.streaming:
             st.info("Click 'Search & Stream' to start fetching news articles.")
