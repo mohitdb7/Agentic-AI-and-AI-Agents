@@ -1,6 +1,6 @@
 {
     "AI & EMERGING TECH": {
-        "final_summary": "A compilation of AI-related news for the week ending September 21, 2025, curated by ChatGPT, DeepSeek, Gemini, Grok, and W.H.L., covers developments in news, reality, artificial intelligence, cognition, and machine learning's future, culminating in a \"Best of\" list. Experts emphasize the importance of investing in good data and innovation to mitigate potential \"disasters\" as AI increasingly integrates into aging services, impacting back-office functions, staffing, and patient care. AWM&T Investment Management Team suggests patience and selectivity in Gen AI investments, noting Morgan Stanley's projection of a $1.5 trillion U.S. AI market by 2025 and the prediction of 1.5 million Gen AI jobs in the U.S. by the end of the next decade, contrasting with the U.K.'s stagnant Gen AI job growth. A new book, 'Artificial Intelligence: The Future of War' by Dr. Majid Rafizadeh, published by Oxford University Press and Simon & Schuster, explores AI's transformative potential to advance education, healthcare, and quality of life, while also addressing its capacity to intensify conflicts and raise ethical concerns as a weapon.",
+        "final_summary": "AI is rapidly transforming various sectors, from aging services to military operations, presenting both opportunities and challenges. AWM&T Investment Management suggests a patient and selective approach to investing in Gen AI, anticipating significant value and wealth creation if it meets expectations, with Morgan Stanley projecting the U.S. AI market to reach $1.5 trillion by 2025 and 1.5 million Gen AI jobs by the end of the next decade. While AI can advance education, revolutionize healthcare, and improve quality of life, it also raises ethical concerns, especially regarding its use in warfare, as explored in Dr. Majid Rafizadeh's book, 'Artificial Intelligence: The Future of War.' The U.K. is currently the only country that has not experienced a rise in jobs created by Gen AI. Experts like Alwan urge investment in good data and innovation to avert potential \"disasters\" in the age of AI. Compiling weekly insights, ChatGPT, DeepSeek, Gemini, Grok, and W.H.L. offer top AI recommendations across news, reality, artificial intelligence, cognition, and machine learning's future.",
         "all_summary": [
             {
                 "url": "https://champaignmagazine.com/2025/09/22/ai-by-ai-weekly-top-5-september-15-21-2025/",
@@ -25,7 +25,7 @@
         ]
     },
     "TECHNOLOGY": {
-        "final_summary": "Enterprise software spending is accelerating due to the adoption of AI, driving up costs across infrastructure, data management, and applications. CIO Dive offers a weekly newsletter, a \"Deep Dive\" blog, and a daily discussion to keep CIOs informed about the latest tech industry news. Wikipedia, available in 118 languages, serves as a tool for understanding world events through its numerous articles. The platform covers a wide range of topics including web, mobile, and various Apple and Android devices, as well as video platforms like YouTube.",
+        "final_summary": "Enterprise software spending is accelerating due to the adoption of AI, driving up costs across infrastructure, data management, and applications. CIO Dive offers a weekly newsletter, a \"Deep Dive\" blog, and a daily discussion to keep CIOs informed about the latest tech industry news. Wikipedia, available in 118 languages, serves as a tool to understand world events through its approximately 1,000 articles covering current events, news, and community topics across web, mobile, and various Apple and Android devices.",
         "all_summary": [
             {
                 "url": "https://www.ciodive.com/news/ai-spend-inflates-enterprise-software-budgets-west-monroe/760662/",
@@ -40,7 +40,7 @@
         ]
     },
     "POLITICS": {
-        "final_summary": "BBC Audio presents the Global News Podcast, featuring coverage of world events. In the realm of politics, Donald Trump has lauded Charlie Kirk as a \"martyr.\" Visual news is available in the \"In Pictures\" section, alongside live video updates. Sports news is accessible, while the tech section focuses on the \"Future of Business\" and \"Innovation,\" with particular attention to \"Artificial Intelligence.\" Multimedia content includes a variety of video and audio segments. Additional sections cover arts, music, travel and sports.",
+        "final_summary": "BBC Audio presents the Global News Podcast, featuring coverage of world events. In the realm of politics, Donald Trump has lauded Charlie Kirk as a \"martyr.\" Visual coverage is available in the \"In Pictures\" and \"Video\" sections, including live updates. Sports news is accessible via the \"Sport\" section. Technology updates can be found in \"Future of Business,\" \"Innovation,\" and specifically in the \"Artificial Intelligence\" sections. Additional content spans various categories including Arts (\"Arts in Motion\"), Travel, and further Sports coverage.",
         "all_summary": [
             {
                 "url": "https://www.bbc.com/audio/play/p0m47dd4",
@@ -50,7 +50,7 @@
         ]
     },
     "WORLD": {
-        "final_summary": "As President Trump reduces U.S. funding to the United Nations, China, Russia, and Qatar are seeking to exert influence over the body's human rights and labor initiatives. Ambassadors from China and Cuba are advocating for restrictions on investigations into government-sanctioned abuses, including torture, war crimes, and the imprisonment of dissidents. The New York Times is offering a $1,000 prize for reading popular articles and provides a weekly Newsquiz and Daily Discussion of trending news.",
+        "final_summary": "As President Trump reduces U.S. funding to the United Nations, China, Russia, and Qatar are seeking to increase their influence on the body\u2019s human rights and labor efforts. Ambassadors from China and Cuba are reportedly working to limit inquiries into government-sanctioned abuses, including torture, war crimes, and the jailing of dissidents. The New York Times is offering readers a chance to win a $1,000 prize for reading popular articles on its site and invites them to test their knowledge with the weekly Newsquiz and engage with the Daily Discussion, a weekly look at trending news on Twitter and Facebook.",
         "all_summary": [
             {
                 "url": "https://www.nytimes.com/section/world",
@@ -60,7 +60,7 @@
         ]
     },
     "BUSINESS": {
-        "final_summary": "Insignia Financial, one of Australia's largest wealth management companies and owner of MLC Australia, has selected Google Cloud to accelerate AI adoption and modernize its digital infrastructure. This move aims to enhance personalization, efficiency, and service delivery for its 1.5 million customers nationwide. The migration to Google Cloud is expected to significantly reduce complexity and manual effort in maintaining critical applications, strengthen cybersecurity and compliance, and drive tighter integration with its BigQuery data lake, supporting Insignia Financial's readiness for AI adoption at scale. The company anticipates a dramatic reduction in its on-premise footprint and associated costs, with minimal disruption to applications, while leveraging Google Cloud's AI capabilities across its offerings, including MLC superannuation member experience platforms.",
+        "final_summary": "Insignia Financial, one of Australia's largest wealth management companies and owner of MLC Australia, has selected Google Cloud to accelerate AI adoption and modernize its digital infrastructure. The move aims to enhance personalization, efficiency, and service delivery for its 1.5 million customers nationwide, including its MLC superannuation member experience platforms. By migrating to Google Cloud, Insignia Financial expects to significantly reduce complexity and manual effort in maintaining critical applications, strengthen cybersecurity and compliance, and dramatically reduce its on-premise footprint and associated costs with minimal disruption. Tighter integration with its BigQuery data lake is also anticipated to drive benefits, supporting Insignia Financial's readiness for AI adoption at scale.",
         "all_summary": [
             {
                 "url": "https://www.googlecloudpresscorner.com/2025-09-22-Insignia-Financial-selects-Google-Cloud-to-accelerate-AI-adoption-and-modernise-digital-infrastructure",
@@ -70,7 +70,7 @@
         ]
     },
     "ENTERTAINMENT": {
-        "final_summary": "Prince Harry and Meghan Markle displayed a 'revamped' dynamic during their first public appearance since meeting with King Charles, while Prince Charles remains 'hesitant' about reconciliation with his son. Meanwhile, Prince William and Kate Middleton have revealed their future plans. In other news, Julianne Hough disclosed that she experienced 'the darkest time' of her life upon joining \"Dancing With The Stars,\" and Angelina Jolie expressed her disillusionment with the United States, stating she doesn't 'recognize' the country amidst 'dark times'. In legal matters, Justin Baldoni has hired Diddy's lawyer in his legal battle with Blake Lively. Finally, Donald Trump surprised viewers on Fox News by revealing the amount of cash he carries on his person.",
+        "final_summary": "Prince Harry and Meghan Markle displayed a 'revamped' dynamic during their first public appearance since meeting with King Charles, while Prince Charles remains 'hesitant' about reconciliation with his son. Prince William and Kate Middleton have revealed their future plans. In other news, Julianne Hough disclosed that she experienced 'the darkest time' of her life upon joining \"Dancing With The Stars,\" and Angelina Jolie stated she doesn't 'recognize' the US, addressing 'dark times'. Justin Baldoni has hired Diddy's lawyer amidst a legal dispute with Blake Lively, and Donald Trump surprised viewers by revealing the amount of cash he carries on Fox News.",
         "all_summary": [
             {
                 "url": "https://www.the-express.com/entertainment/celebrity-news/184535/angelina-jolie-politics-jimmy-kimmel",

@@ -1,19 +1,17 @@
 from langgraph.graph import StateGraph, START, END
-from typing import TypedDict
 from news_agent_flow.models import TavilyResponse, OutputGenreSummarisedResponseModel
-from news_agent_flow.models import TavilyCrawlListModel
-from news_agent_flow.models import SummarisedNewsArticle
-from news_agent_flow.models import GenreSumarisedModel, FinalGenreSummaryModel
-from news_agent_flow.tools import GenreManager
+from news_agent_flow.models import TavilyCrawlListModel, GenreSumarisedModel, SummarisedNewsArticle
+from news_agent_flow.tools import GenreManager, search_news_on_web, crawl_url_list, summarise_news_list
 from news_agent_flow.agents import NewsSummariser
+from news_agent_flow.configs import AppConfigModel
+
+from typing import TypedDict
+
 import time
-
-# from agents import news_summariser
-
 import json
-from news_agent_flow.tools import search_news_on_web, crawl_url_list, summarise_news_list
 from datetime import datetime
 
+app_config = AppConfigModel.from_json_file("news_agent_flow/configs/agent_config.json")
 
 is_mock = True
 
@@ -97,7 +95,7 @@ def summarise_news(state: NewsAgentState) -> NewsAgentState:
     }
 
 def assign_genre(state: NewsAgentState) -> NewsAgentState:
-    if is_mock:
+    if not is_mock:
         result = GenreSumarisedModel.from_json_file("mock_run/json_files/tavily_AI_Genre_Summary.json")
     else:
         result = GenreManager().assign_genre_to_summaries(state["news_summary"])
@@ -116,15 +114,8 @@ def assign_genre(state: NewsAgentState) -> NewsAgentState:
     }
 
 def final_genre_summary(state: NewsAgentState) -> NewsAgentState:
-    if is_mock:
+    if not is_mock:
         out_obj: OutputGenreSummarisedResponseModel = OutputGenreSummarisedResponseModel.from_file("mock_run/json_files/tavily_AI_Final_Summarised_Genre.json")
-    
-        # result = {}
-        # for genre_summary in final_genre_summary:
-        #     result[genre_summary.genre] = {"final_summary" : genre_summary.summary,
-        #                                 "all_summary" : state["genre_summary"].categories.get(genre_summary.genre)}
-
-        # out_obj: OutputGenreSummarisedResponseModel = OutputGenreSummarisedResponseModel(**final_genre_summary)
     else:
         out_obj: OutputGenreSummarisedResponseModel = NewsSummariser().summarise_genre_news(state["genre_summary"])
 
@@ -162,8 +153,7 @@ def create_news_agent_flow():
 
     return graph.compile()
 
-
 # Invoke the graph
-# graph = create_news_agent_flow()
-# output = graph.invoke({"query": "latest news on AI advancements in the last week"})
-# print(output)
+graph = create_news_agent_flow()
+output = graph.invoke({"query": "latest news on AI advancements in the last week"})
+print(output)

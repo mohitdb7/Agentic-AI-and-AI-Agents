@@ -1,0 +1,58 @@
+{
+    "llm":[
+        {
+            "name": "gemini",
+            "model": {
+                "langchain": "gemini-2.0-flash",
+                "crew_ai": "gemini/gemini-2.0-flash",
+                "default": "gemini-2.0-flash"
+            },
+            "temprature": 0.1,
+            "is_active": true
+        },
+        {
+            "name": "open_ai",
+            "model": {
+                "langchain": "gpt-4",
+                "crew_ai": "openai/gpt-4",
+                "default": "gpt-4"
+            },
+            "temprature": 0.1,
+            "is_active": false
+        }
+    ],
+    "web_crawl": [
+        {
+            "name": "tavily",
+            "is_active": true
+        },
+        {
+            "name": "langchain",
+            "is_active": false
+        }
+    ],
+    "summarizer": [
+        {
+            "name": "phi",
+            "is_active": false
+        },
+        {
+            "name": "facebook_cnn",
+            "is_active": true
+        },
+        {
+            "name": "llm",
+            "is_active": false
+        }
+    ], 
+    "assign_genre": [
+        {
+            "name": "langchain",
+            "is_active": true
+        }, 
+        {
+            "name": "tool",
+            "is_active": false
+        }
+    ]
+}

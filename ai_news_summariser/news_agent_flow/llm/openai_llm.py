@@ -1,11 +1,13 @@
 from crewai import LLM
 from langchain_openai import OpenAI
-from langchain_google_genai import ChatGoogleGenerativeAI
+from news_agent_flow.configs import AppConfigModel
 
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
+
+_openai_llm = AppConfigModel.from_json_file("news_agent_flow/configs/agent_config.json").get_llm_by_name("open_ai")
 
 class OpenAICrewLLM:
     """
@@ -15,8 +17,8 @@ class OpenAICrewLLM:
 
     def __init__(self):
         self.llm = LLM(
-            model=OpenAICrewLLM.llm_model(),
-            temperature=0.1,
+            model=f"{_openai_llm.model.crew_ai}",
+            temperature=_openai_llm.temprature,
             api_key=os.getenv("OPENAI_API_KEY")  # or correct param name
         )
 
@@ -25,7 +27,7 @@ class OpenAICrewLLM:
     
     @staticmethod
     def llm_model() -> str:
-        "openai/gpt-4"
+        f"{_openai_llm.name}"
 
 
 class OpenAILangchainLLM:
@@ -36,7 +38,7 @@ class OpenAILangchainLLM:
     llm: OpenAI
     def __init__(self):
         self.llm = OpenAI(
-            model=OpenAILangchainLLM.llm_model(),
+            model=f"{_openai_llm.model.langchain}",
             api_key=os.getenv("OPENAI_API_KEY"))
     
     def get_llm(self):
@@ -44,4 +46,4 @@ class OpenAILangchainLLM:
     
     @staticmethod
     def llm_model() -> str:
-        "gpt-4"
+        f"{_openai_llm.name}"

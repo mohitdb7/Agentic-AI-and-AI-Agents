@@ -15,9 +15,8 @@ load_dotenv()
 class NewsSummariser:
     llm: LLM
 
-    def __init__(self, llm_param:str="gemini"):
-        self.llm = LLMFactory.build_crew_llm(llm_param=llm_param)
-        
+    def __init__(self):
+        self.llm = LLMFactory.build_crew_llm()
 
     def news_summariser(self, news_content, genre):
 

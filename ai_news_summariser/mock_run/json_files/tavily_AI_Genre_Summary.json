@@ -20,11 +20,6 @@
                 "url": "https://www.arabnews.com/node/2616221/world",
                 "title": "At Charlie Kirk memorial, Trump rallies MAGA against political ...",
                 "summary": "Artificial intelligence has become one of the most transformative and influential technologies of the modern era. It can serve humanity by advancing education, revolutionizing healthcare and improving quality of life across the globe. But it can also intensify conflicts, reshape military operations and raise serious ethical concerns when used as a weapon of war. The balance between these two realities will define how this technology shapes the future of our world, say the authors of the book. The book is published by Oxford University Press and is published in the U.S. by Simon & Schuster, a division of Penguin Random House. The author\u2019s name is Dr. Majid Rafizadeh and the book is \u2018Artificial Intelligence: The Future of War\u2019."
-            },
-            {
-                "url": "https://www.googlecloudpresscorner.com/2025-09-22-Insignia-Financial-selects-Google-Cloud-to-accelerate-AI-adoption-and-modernise-digital-infrastructure",
-                "title": "Insignia Financial selects Google Cloud to accelerate AI adoption ...",
-                "summary": "Insignia Financial selects Google Cloud to accelerate AI adoption and modernise digital infrastructure. The goal is to enhance personalization, efficiency, and service delivery for its 1.5 million customers nationwide. Insignia Financial is one of Australia's largest wealth management companies and owner of MLC Australia. Google Cloud is the new way to the cloud, providing AI capabilities across many of its offerings, including its MLC superannuation member experience platforms. The company expects the migration to significantly reduce complexity and manual effort associated with maintaining critical applications, while strengthening cybersecurity and compliance. Tighter integration with its BigQuery data lake is also expected to drive benefits, supporting Insignedia Financial's readiness for AI adoption at scale. The move will dramatically reduce our on-premise footprint and its associated costs, with minimal disruption to applications."
             }
         ],
         "TECHNOLOGY": [
@@ -51,6 +46,13 @@
                 "url": "https://www.nytimes.com/section/world",
                 "title": "World News - The New York Times",
                 "summary": "Autocrats Move Quickly to Fill Void as Trump Retreats From U.N. - The New York Times. The ambassadors of China and Cuba are pushing to limit inquiries into government-sanctioned abuses like torture, war crimes, and jailing of dissidents. As President Trump pulls back U.S. funding of the United Nations, countries like China, Russia and Qatar are seeking to influence the body\u2019s work on human rights and labor. The Times is offering readers the chance to win a $1,000 prize for reading the most popular articles on this site. Use the weekly Newsquiz to test your knowledge of stories you saw on The Times site. The Daily Discussion is a weekly, offbeat look at the news that has been trending on Twitter and Facebook."
+            }
+        ],
+        "BUSINESS": [
+            {
+                "url": "https://www.googlecloudpresscorner.com/2025-09-22-Insignia-Financial-selects-Google-Cloud-to-accelerate-AI-adoption-and-modernise-digital-infrastructure",
+                "title": "Insignia Financial selects Google Cloud to accelerate AI adoption ...",
+                "summary": "Insignia Financial selects Google Cloud to accelerate AI adoption and modernise digital infrastructure. The goal is to enhance personalization, efficiency, and service delivery for its 1.5 million customers nationwide. Insignia Financial is one of Australia's largest wealth management companies and owner of MLC Australia. Google Cloud is the new way to the cloud, providing AI capabilities across many of its offerings, including its MLC superannuation member experience platforms. The company expects the migration to significantly reduce complexity and manual effort associated with maintaining critical applications, while strengthening cybersecurity and compliance. Tighter integration with its BigQuery data lake is also expected to drive benefits, supporting Insignedia Financial's readiness for AI adoption at scale. The move will dramatically reduce our on-premise footprint and its associated costs, with minimal disruption to applications."
             }
         ],
         "ENTERTAINMENT": [

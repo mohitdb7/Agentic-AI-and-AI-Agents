@@ -1,9 +1,11 @@
 from crewai import LLM
-
+from news_agent_flow.configs import AppConfigModel
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 import os
 from dotenv import load_dotenv
+
+_gemini_llm = AppConfigModel.from_json_file("news_agent_flow/configs/agent_config.json").get_llm_by_name("gemini")
 
 load_dotenv()
 
@@ -15,8 +17,8 @@ class GeminiCrewLLM:
 
     def __init__(self):
         self.llm = LLM(
-            model="gemini/gemini-2.0-flash",
-            temperature=0.1,
+            model=f"{_gemini_llm.model.crew_ai}",
+            temperature=_gemini_llm.temprature,
             api_key=os.getenv("GOOGLE_API_KEY")  # or correct param name
         )
 
@@ -25,7 +27,7 @@ class GeminiCrewLLM:
     
     @staticmethod
     def llm_model() -> str:
-        "gemini/gemini-2.0-flash"
+        f"{_gemini_llm.name}"
 
 
 class GeminiLangchainLLM:
@@ -36,8 +38,8 @@ class GeminiLangchainLLM:
 
     def __init__(self):
         self.llm = ChatGoogleGenerativeAI(
-            model="gemini-2.0-flash",
-            temperature=0.1,
+            model=f"{_gemini_llm.model.langchain}",
+            temperature=_gemini_llm.temprature,
             api_key=os.getenv("GOOGLE_API_KEY")
             )
 
@@ -46,4 +48,4 @@ class GeminiLangchainLLM:
     
     @staticmethod
     def llm_model() -> str:
-        "gemini-2.0-flash"
+        f"{_gemini_llm.name}"
