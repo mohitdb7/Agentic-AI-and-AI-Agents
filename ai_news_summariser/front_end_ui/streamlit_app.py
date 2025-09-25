@@ -10,7 +10,8 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 # The following import is crucial for binding the thread to the Streamlit context
 from streamlit.runtime.scriptrunner import add_script_run_ctx 
-from models import WebResponseModel, SummarisedNewsArticleModel, NewsGenredSummaryModel
+# Assuming models.py is available
+from models import WebResponseModel, SummarisedNewsArticleModel, NewsGenredSummaryModel, OutputGenreSummarisedResponseModel
 
 
 GENRES = ["Politics", "Technology", "AI", "Sports", "Business", "Health"]
@@ -77,7 +78,6 @@ def parse_news_summaries(nodes_result):
 
 def parse_with_news_genre(nodes_result):
     """Parse genre-assigned news items into grouped dictionary."""
-    print("Categories data:", nodes_result["categories"])
     result = NewsGenredSummaryModel(**nodes_result["categories"])
     
     # Convert to our internal format
@@ -96,23 +96,31 @@ def parse_with_news_genre(nodes_result):
     
     return grouped_articles
 
+def parse_final_news_summary_with_genre(nodes_result):
+    final_summary = nodes_result
+    items = OutputGenreSummarisedResponseModel(**final_summary)
+    return items
+
 def render_genre_timeline(grouped_articles):
     """Render articles grouped by genre in a timeline/chain view."""
     
-    # Timeline CSS
+    # Updated Timeline CSS for better alignment
     st.markdown("""
         <style>
         .timeline-container {
             max-height: 600px;
             overflow-y: auto;
             padding: 20px 0;
+            margin-top: 15px; /* Add some space above the timeline */
         }
         
+        /* FIX: Remove padding-left from .genre-section and use margin/positioning */
         .genre-section {
             margin-bottom: 40px;
             position: relative;
         }
         
+        /* FIX: Increase header width and use margin-left to align it with content */
         .genre-header {
             display: flex;
             align-items: center;
@@ -123,6 +131,9 @@ def render_genre_timeline(grouped_articles):
             font-weight: bold;
             font-size: 18px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            /* NEW: Give margin-left to push it right, aligning with the cards */
+            margin-left: 30px; 
+            position: relative;
         }
         
         .genre-badge {
@@ -136,19 +147,22 @@ def render_genre_timeline(grouped_articles):
             backdrop-filter: blur(10px);
         }
         
+        /* FIX: Adjust line position relative to the new header margin and content */
         .timeline-line {
             position: absolute;
-            left: 30px;
-            top: 70px;
+            left: 36px; /* 36px to align with the dot center (30px margin + 6px center) */
+            top: 70px; 
             bottom: 0;
             width: 3px;
-            background: linear-gradient(to bottom, #444, transparent);
+            background: #444; 
             border-radius: 2px;
+            z-index: 1; 
         }
         
+        /* FIX: Keep margin-left to align with the header */
         .timeline-item {
             position: relative;
-            margin-left: 60px;
+            margin-left: 60px; /* Aligns content slightly indented from the header */
             margin-bottom: 25px;
             padding: 20px 25px;
             background: #1e1e1e;
@@ -164,16 +178,17 @@ def render_genre_timeline(grouped_articles):
             box-shadow: 0 6px 25px rgba(0,0,0,0.5);
         }
         
+        /* FIX: Adjust dot position to align with the line (left: -24px from 60px margin) */
         .timeline-dot {
             position: absolute;
-            left: -45px;
+            left: -24px; 
             top: 25px;
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background: white;
+            background: #1e1e1e; 
             border: 4px solid;
-            z-index: 1;
+            z-index: 2; 
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
@@ -185,11 +200,13 @@ def render_genre_timeline(grouped_articles):
             font-weight: 600;
         }
         
+        /* Description styling: NO TRUNCATION */
         .timeline-item p {
             margin: 0 0 15px 0;
             color: #ccc;
             font-size: 14px;
             line-height: 1.5;
+            white-space: pre-wrap; 
         }
         
         .timeline-item a {
@@ -248,18 +265,14 @@ def render_genre_timeline(grouped_articles):
                     <span>📰 {genre}</span>
                     <span class="genre-badge">{article_count} article{'s' if article_count != 1 else ''}</span>
                 </div>
-                <div class="timeline-line"></div>
-        """, unsafe_allow_html=True)
+                <div class="timeline-line" style="background-color: {genre_color};"></div>
+        """, unsafe_allow_html=True) 
         
         # Articles for this genre
         for i, article in enumerate(articles):
             title = article.get("title", "No Title")
             description = article.get("description", "")
             url = article.get("url", "")
-            
-            # Truncate description if too long
-            if len(description) > 200:
-                description = description[:200] + "..."
             
             st.markdown(f"""
                 <div class="timeline-item" style="border-left-color: {genre_color};">
@@ -274,7 +287,7 @@ def render_genre_timeline(grouped_articles):
         st.markdown('</div>', unsafe_allow_html=True)
     
     st.markdown('</div>', unsafe_allow_html=True)
-
+    
 def stream_from_api(url, msg_queue, stop_event, params):
     """Background thread that streams data and sends it to the queue."""
     query_param = ",".join(params['genres']).strip(",")
@@ -313,12 +326,70 @@ def stream_from_api(url, msg_queue, stop_event, params):
             
             elif node_name == "assign_genre":
                 genred_news_items = parse_with_news_genre(node_result)
-                msg_queue.put({"type": "genre_assigned", "data": genred_news_items})
+                msg_queue.put({"type": "genre_assigned", "data": genred_news_items})                
 
             elif node_name == "final_genre_summary":
+                final_summary = parse_final_news_summary_with_genre(node_result)
+                msg_queue.put({"type" : "final_summary", "data" : final_summary})
                 msg_queue.put({"type": "summary_done"})
                 return
 
+def render_final_summary():
+    """
+    Renders the final, aggregated summary for each genre using Streamlit expanders.
+    The structure is expected to be Dict[str, OutputGenreSummaryModel] from
+    st.session_state.final_summary.root.
+    """
+    st.subheader("Final Aggregated Summaries 📝")
+    st.info("Below is the final, aggregated summary for each selected genre.")
+    
+    final_summary_data = st.session_state.final_summary.root
+    
+    if not final_summary_data:
+        st.warning("No final summaries available to display.")
+        return
+
+    # Create a container for the summaries
+    with st.container(border=True):
+        for genre, summary_model in final_summary_data.items():
+            genre_color = GENRE_COLORS.get(genre, "#6C5CE7")
+            
+            # Use an expander for each genre summary
+            # We use an unsafe markdown with a style block to color the expander's header area
+            st.markdown(
+                f"""
+                <style>
+                .stExpander {{
+                    border: 1px solid {genre_color};
+                    border-radius: 8px;
+                    margin-bottom: 10px;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                    background-color: #262730; /* Dark background */
+                }}
+                .stExpander details summary {{
+                    color: {genre_color}; /* Color the genre title */
+                    font-weight: bold;
+                    font-size: 18px;
+                    padding: 10px 15px;
+                }}
+                </style>
+                """,
+                unsafe_allow_html=True
+            )
+            
+            with st.expander(f"✨ **{genre} Summary**", expanded=True):
+                # The summary is an attribute of the Pydantic model
+                summary_text = summary_model.final_summary
+                
+                # Display the summary text in a styled box
+                st.markdown(
+                    f"""
+                    <div style="background-color: #1e1e1e; padding: 15px; border-radius: 5px; border-left: 5px solid {genre_color};">
+                        <p style='white-space: pre-wrap;'>{summary_text}</p>
+                    </div>
+                    """, 
+                    unsafe_allow_html=True
+                )
 
 def main():
     st.title("🧠 AI News Summariser")
@@ -336,6 +407,9 @@ def main():
 
     if "genre_articles" not in st.session_state:
         st.session_state.genre_articles = {}
+    
+    if "final_summary" not in st.session_state:
+        st.session_state.final_summary = {}
 
     if "stream_status" not in st.session_state:
         st.session_state.stream_status = "idle"  # idle, fetching, summarizing, assigning_genre, complete
@@ -353,6 +427,7 @@ def main():
         st.session_state.stop_event.clear()
         st.session_state.news_items = []
         st.session_state.genre_articles = {}
+        st.session_state.final_summary = {}
         st.session_state.stream_status = "fetching"
         
         # Clear the queue from any previous runs
@@ -379,18 +454,24 @@ def main():
 
     # Display status
     if st.session_state.streaming:
+        print(st.session_state.streaming, st.session_state.stream_status)
         if st.session_state.stream_status == "fetching":
             st.info("🔍 Fetching news articles...")
         elif st.session_state.stream_status == "summarizing":
             st.info("📝 Summarizing news articles...")
         elif st.session_state.stream_status == "assigning_genre":
             st.info("🏷️ Assigning genres to articles...")
+        elif st.session_state.stream_status == "final_summary":
+            st.info("✅ Generating final summary...")
+    elif st.session_state.stream_status == "final_summary":
+        st.info("")
+
 
 # ----------------------------------------------------------------------
 # --- CORE FIX: Process Queue Messages WITHOUT Blocking UI ---
 # ----------------------------------------------------------------------
 
-    # Poll queue and update news (NO SPINNER - this was blocking the UI)
+    # Poll queue and update news
     if st.session_state.streaming:
         messages_processed = 0
         should_rerun = False
@@ -416,6 +497,10 @@ def main():
                     st.session_state.genre_articles = msg["data"]
                     st.session_state.stream_status = "assigning_genre"
                     should_rerun = True
+                
+                elif msg["type"] == "final_summary":
+                    st.session_state.final_summary = msg["data"]
+                    st.session_state.stream_status = "final_summary"
                     
                 elif msg["type"] == "summary_done":
                     st.success("✅ Summary generation complete.")
@@ -440,6 +525,9 @@ def main():
 # ----------------------------------------------------------------------
 
     st.subheader("🗞️ News Articles")
+
+    if st.session_state.final_summary:
+        render_final_summary()
     
     # Render genre-based articles if available
     if st.session_state.genre_articles:
@@ -466,7 +554,7 @@ def main():
     elif st.session_state.news_items:
         st.info("📋 Processing articles for genre assignment...")
         
-        # Inject card CSS
+        # Inject card CSS (simplified fallback card)
         st.markdown("""
             <style>
             .news-card {

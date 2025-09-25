@@ -117,14 +117,14 @@ def assign_genre(state: NewsAgentState) -> NewsAgentState:
 
 def final_genre_summary(state: NewsAgentState) -> NewsAgentState:
     if is_mock:
-        final_genre_summary = FinalGenreSummaryModel.from_json_file("mock_run/json_files/tavily_AI_Final_Summarised_Genre.json")
+        out_obj: OutputGenreSummarisedResponseModel = OutputGenreSummarisedResponseModel.from_file("mock_run/json_files/tavily_AI_Final_Summarised_Genre.json")
     
-        result = {}
-        for genre_summary in final_genre_summary:
-            result[genre_summary.genre] = {"final_summary" : genre_summary.summary,
-                                        "all_summary" : state["genre_summary"].categories.get(genre_summary.genre)}
+        # result = {}
+        # for genre_summary in final_genre_summary:
+        #     result[genre_summary.genre] = {"final_summary" : genre_summary.summary,
+        #                                 "all_summary" : state["genre_summary"].categories.get(genre_summary.genre)}
 
-        out_obj: OutputGenreSummarisedResponseModel = OutputGenreSummarisedResponseModel(**result)
+        # out_obj: OutputGenreSummarisedResponseModel = OutputGenreSummarisedResponseModel(**final_genre_summary)
     else:
         out_obj: OutputGenreSummarisedResponseModel = NewsSummariser().summarise_genre_news(state["genre_summary"])
 

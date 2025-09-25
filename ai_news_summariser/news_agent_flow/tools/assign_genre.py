@@ -61,11 +61,13 @@ class GenreManager:
             if genre_summary.get(result["genre"]):
                 genre_summary[result["genre"]].append({
                     "url": news_summary.url,
+                    "title": news_summary.title,
                     "summary": news_summary.summary
                 })
             else:
                 genre_summary[result["genre"]] = [{
                     "url": news_summary.url,
+                    "title": news_summary.title,
                     "summary": news_summary.summary
                 }]
         

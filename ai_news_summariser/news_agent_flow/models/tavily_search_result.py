@@ -29,11 +29,14 @@ class TavilyResponse(BaseModel):
             data = json.load(f)
             return TavilyResponse(**data)
         
-
 class OutputGenreSummaryModel(BaseModel):
     final_summary: str
     all_summary: List[SummarisedNewsArticle]
 
 class OutputGenreSummarisedResponseModel(RootModel[Dict[str, OutputGenreSummaryModel]]):
-    pass
+    @staticmethod
+    def from_file(filepath: str | Path) -> 'OutputGenreSummarisedResponseModel':
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return OutputGenreSummarisedResponseModel.model_validate(data)
 
