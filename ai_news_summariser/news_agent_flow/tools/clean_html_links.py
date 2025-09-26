@@ -1,5 +1,6 @@
 import re
 from bs4 import BeautifulSoup
+import html
 
 def clean_web_content(html_content: str) -> str:
     # Remove any markdown-style URLs [text](url)
@@ -24,3 +25,17 @@ def clean_web_content(html_content: str) -> str:
 
     # Optional: Strip leading/trailing whitespace
     return text.strip()
+
+def clean_html_and_entities(text):
+    # Remove HTML using BeautifulSoup (better than regex for real HTML)
+    soup = BeautifulSoup(text, "html.parser")
+    text_no_html = soup.get_text(separator=' ')
+    
+    # Decode HTML entities (e.g., &amp;, &#39;)
+    text_unescaped = html.unescape(text_no_html)
+    
+    # Remove unicode control characters, excess whitespace
+    text_cleaned = re.sub(r'[\x00-\x1F\x7F-\x9F]', '', text_unescaped)  # remove control chars
+    text_cleaned = re.sub(r'\s+', ' ', text_cleaned).strip()  # normalize whitespace
+
+    return text_cleaned

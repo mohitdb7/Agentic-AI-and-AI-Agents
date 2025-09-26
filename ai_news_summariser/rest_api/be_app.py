@@ -10,6 +10,7 @@ from typing import List
 
 from rest_api import MongoDBCRUD
 from rest_api.models import NewsSummaryResult
+from rest_api.configs import ConfigModel
 from datetime import datetime, timezone
 
 import time
@@ -21,12 +22,17 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from news_agent_flow import create_news_agent_flow
 from news_agent_flow.models import OutputGenreSummarisedResponseModel
 
+
+be_config = ConfigModel.from_json_file("rest_api/configs/be_config.json")
+
 #Initialise the FastAPI
 app = FastAPI(title="News Summariser")
 
 try:
+    mongodb_config = be_config.storage.mongo
+    print(f"Starting mongo at {mongodb_config.url}:{mongodb_config.port}")
     # MongoDB setup
-    MONGO_DETAILS = "mongodb://localhost:27017"
+    MONGO_DETAILS = f"{mongodb_config.url}:{mongodb_config.port}"
     client = AsyncIOMotorClient(MONGO_DETAILS)
     db = client.news_summary_db
     collection = db.news_summary
@@ -39,9 +45,10 @@ graph = create_news_agent_flow()
 
 @app.on_event("startup")
 async def startup_event():
+    mongodb_config = be_config.storage.mongo
     try:
         # Create TTL index on createdAt (expire after 3600 seconds)
-        await collection.create_index("createdAt", expireAfterSeconds=5*60)
+        await collection.create_index("createdAt", expireAfterSeconds=mongodb_config.row_expiry)
         # Create index on genre string
         await collection.create_index([("genre", 1)], unique=True)
     except Exception as e:
@@ -60,21 +67,14 @@ def get_or_create_event_loop():
         return loop
 
 async def news_agent_stream(query: str):
-    query = ", ".join(sorted(query.split(","))).strip(",")
+    query = ",".join(sorted(query.split(","))).strip(",")
     events = graph.stream({"query": f"latest news on {query}"},
                              stream_mode="updates")
     
-    event_node_map = {
-        "search_the_web" : "results_search",
-        "crawl_the_news" : "result_crawl",
-        "summarise_the_news" : "news_summary",
-        "assign_genre" : "genre_summary",
-        "final_genre_summary" : "final_summary"
-
-    }
+    event_node_map = be_config.stream_events
 
     results_in_store = False
-    result_key_flow = ["search_the_web", "summarise_the_news", "assign_genre", "final_genre_summary"]
+    result_key_flow = be_config.stream_sequence
     for keys_flow in result_key_flow:
         result = await MongoDBCRUD.get_document(f"{query}_{keys_flow}", collection)
         if not result:

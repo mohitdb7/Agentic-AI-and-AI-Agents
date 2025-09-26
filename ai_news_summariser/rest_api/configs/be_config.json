@@ -1,0 +1,27 @@
+{
+    "storage" : {
+        "mongo" : {
+            "url": "mongodb://localhost",
+            "port": 27017,
+            "row_expiry": 600,
+            "is_active" : true
+        },
+        "local": {
+            "is_active": false
+        }
+    },
+    "stream_sequence": ["search_the_web", "summarise_the_news", "assign_genre", "final_genre_summary"],
+    "stream_events": {
+        "search_the_web" : "results_search",
+        "crawl_the_news" : "result_crawl",
+        "summarise_the_news" : "news_summary",
+        "assign_genre" : "genre_summary",
+        "final_genre_summary" : "final_summary"
+
+    },
+    "server_config": {
+        "path": "rest_api.be_app:app",
+        "host": "0.0.0.0",
+        "port": "8080"
+    }
+}

@@ -9,12 +9,12 @@ class GenreManager:
         elif isinstance(genres, str):
             return genres
         else:
-            return [
+            return ", ".join([
                         "Politics", "Sports", "Business", "Technology", "Science", "Health",
                         "Entertainment", "Crime", "World", "Environment", "Economy",
                         "Culture", "Education", "Law", "Military", "Religion",
                         "Opinion", "Travel", "AI & Emerging Tech", "Local News"
-                    ]
+                    ])
     def assign_genre(self):
         prompt = GenrePrompts.get_genre_prompt()
         

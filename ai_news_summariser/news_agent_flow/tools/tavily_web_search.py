@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import os
 
-from .clean_html_links import clean_web_content
+from .clean_html_links import clean_web_content, clean_html_and_entities
 from news_agent_flow.models import TavilyResponse, TavilyCrawlListModel, TavilyResultItem, TavilyCrawlItemModel
 
 load_dotenv()
@@ -44,8 +44,8 @@ def crawl_url_list(crawl_urls: list[TavilyResultItem] = []) -> TavilyCrawlListMo
         for future in as_completed(futures):
             future_result = future.result()
             if future_result["results"]:
-                merged_raw_content = ".".join(item["raw_content"] if item["raw_content"] else "" for item in future_result["results"])
-                merged_raw_content = clean_web_content(merged_raw_content)
+                merged_raw_content = ". ".join(item["raw_content"] if item["raw_content"] else "" for item in future_result["results"])
+                merged_raw_content = clean_web_content(clean_html_and_entities(merged_raw_content))
                 
                 last_url = future_result["base_url"] if future_result["base_url"] else future_result["results"][-1]["url"]
                 try:
