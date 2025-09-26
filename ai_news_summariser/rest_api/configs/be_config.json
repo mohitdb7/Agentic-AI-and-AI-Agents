@@ -17,7 +17,6 @@
         "summarise_the_news" : "news_summary",
         "assign_genre" : "genre_summary",
         "final_genre_summary" : "final_summary"
-
     },
     "server_config": {
         "path": "rest_api.be_app:app",

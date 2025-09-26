@@ -18,7 +18,7 @@ class GenreManager:
     def assign_genre(self):
         prompt = GenrePrompts.get_genre_prompt()
         
-        llm = LLMFactory.build_langchain_llm("gemini")
+        llm = LLMFactory.build_langchain_llm()
 
         chain_exec = (
                         {

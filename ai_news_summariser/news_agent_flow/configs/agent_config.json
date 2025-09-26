@@ -21,27 +21,37 @@
             "is_active": false
         }
     ],
-    "web_crawl": [
-        {
-            "name": "tavily",
-            "is_active": true
-        },
-        {
-            "name": "langchain",
-            "is_active": false
-        }
-    ],
+    "web_crawl": {
+        "tools": [
+            {
+                "name": "tavily_crawl",
+                "is_active": true
+            },
+            {
+                "name": "tavily_extract",
+                "is_active": false
+            }
+        ], "parallel_executor": 1
+    },
     "summarizer": [
         {
             "name": "phi",
+            "model": "",
             "is_active": false
         },
         {
             "name": "facebook_cnn",
+            "model": "facebook/bart-large-cnn",
             "is_active": true
         },
         {
-            "name": "llm",
+            "name": "open_ai_llm",
+            "model": "gpt-4",
+            "is_active": false
+        },
+        {
+            "name": "gemini_llm",
+            "model": "gemini-2.0-flash",
             "is_active": false
         }
     ], 

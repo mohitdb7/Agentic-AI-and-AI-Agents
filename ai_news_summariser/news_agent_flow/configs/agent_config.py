@@ -18,10 +18,19 @@ class SimpleComponentConfigModel(BaseModel):
     name: str
     is_active: bool
 
+class LLMComponentConfigModel(BaseModel):
+    name: str
+    model: str
+    is_active: bool
+
+class WebCrawl(BaseModel):
+    tools: List[SimpleComponentConfigModel]
+    parallel_executor: int
+
 class AppConfigModel(BaseModel):
     _llm: List[LLMConfigModel] = PrivateAttr()
-    _web_crawl: List[SimpleComponentConfigModel] = PrivateAttr()
-    _summarizer: List[SimpleComponentConfigModel] = PrivateAttr()
+    _web_crawl: WebCrawl = PrivateAttr()
+    _summarizer: List[LLMComponentConfigModel] = PrivateAttr()
     _assign_genre: List[SimpleComponentConfigModel] = PrivateAttr()
 
     @classmethod
@@ -34,8 +43,8 @@ class AppConfigModel(BaseModel):
 
         instance = cls()
         instance._llm = [LLMConfigModel(**llm) for llm in data.get("llm", [])]
-        instance._web_crawl = [SimpleComponentConfigModel(**item) for item in data.get("web_crawl", [])]
-        instance._summarizer = [SimpleComponentConfigModel(**item) for item in data.get("summarizer", [])]
+        instance._web_crawl = WebCrawl(**data.get("web_crawl", {}))
+        instance._summarizer = [LLMComponentConfigModel(**item) for item in data.get("summarizer", [])]
         instance._assign_genre = [SimpleComponentConfigModel(**item) for item in data.get("assign_genre", [])]
         return instance
 
@@ -54,10 +63,14 @@ class AppConfigModel(BaseModel):
 
     @property
     def active_web_crawl(self) -> Optional[SimpleComponentConfigModel]:
-        return self._get_active_or_first(self._web_crawl)
+        return self._get_active_or_first(self._web_crawl.tools)
+    
+    @property
+    def web_crawl_parallel(self) -> Optional[int]:
+        return self._web_crawl.parallel_executor
 
     @property
-    def active_summarizer(self) -> Optional[SimpleComponentConfigModel]:
+    def active_summarizer(self) -> Optional[LLMComponentConfigModel]:
         return self._get_active_or_first(self._summarizer)
 
     @property

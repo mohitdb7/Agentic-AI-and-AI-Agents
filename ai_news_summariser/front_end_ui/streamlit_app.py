@@ -309,6 +309,14 @@ def stream_from_api(url, msg_queue, stop_event, params):
         if msg.data:
             try:
                 data = json.loads(msg.data)
+                if data.get("error"):
+                    print(f"Error in stream response {data["error"]}")
+                    st.session_state.streaming = False
+                    st.session_state.stop_event.set()
+                    st.session_state.stream_status = "idle"
+                    st.rerun()
+                    return
+                
                 node_name = data["node_name"]
                 node_result = data["node_result"]
             except json.JSONDecodeError as e:

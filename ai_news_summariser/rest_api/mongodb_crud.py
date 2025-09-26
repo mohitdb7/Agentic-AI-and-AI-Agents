@@ -2,10 +2,34 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from pymongo.errors import PyMongoError
 
 from rest_api.models import NewsSummaryResult
+import re
 from pydantic import BaseModel, Field, ValidationError
 
 
 class MongoDBCRUD:
+    @staticmethod
+    async def get_all_documents(query: str, collection):
+        try:
+            cursor = collection.find({
+                "genre": { "$regex": query, "$options": "i" }
+
+            })
+
+            documents = await cursor.to_list(length=None)  # fetch all results
+            return len(documents)
+        except Exception as e:
+            print(f"Exception in get_all_documents {str(e)}")
+
+    @staticmethod
+    async def cleanup(query: str, collection):
+        try:
+            result = await collection.delete_many({"genre": { "$regex": query, "$options": "i" }})
+            print(f"Deleted {result.deleted_count} documents.")
+            return result.deleted_count
+        except Exception as e:
+            print(f"Exception while delete attempt {query}, {str(e)}")
+            return 0
+
     @staticmethod
     async def get_document(query: str, collection):
         try:

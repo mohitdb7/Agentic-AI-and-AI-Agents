@@ -1,7 +1,7 @@
 from langgraph.graph import StateGraph, START, END
 from news_agent_flow.models import TavilyResponse, OutputGenreSummarisedResponseModel
 from news_agent_flow.models import TavilyCrawlListModel, GenreSumarisedModel, SummarisedNewsArticle
-from news_agent_flow.tools import GenreManager, search_news_on_web, crawl_url_list, summarise_news_list
+from news_agent_flow.tools import GenreManager, search_news_on_web, summarise_news_list, get_news_content
 from news_agent_flow.agents import NewsSummariser
 from news_agent_flow.configs import AppConfigModel
 
@@ -64,7 +64,8 @@ def crawl_news_content(state: NewsAgentState) -> TavilyCrawlListModel:
             time.sleep(5)
         else:
             started_at = datetime.now()
-            crawl_results = crawl_url_list.run(response.results)
+            # crawl_results = crawl_url_list.run(response.results)
+            crawl_results = [TavilyCrawlListModel(**item) for item in get_news_content.run(response.results)]
             ended_at = datetime.now()
             result = crawl_results
 
@@ -192,8 +193,6 @@ def create_news_agent_flow():
     graph.add_conditional_edges("crawl_the_news", lambda s: END if s.get("has_error") else "summarise_the_news")
     graph.add_conditional_edges("summarise_the_news", lambda s: END if s.get("has_error") else "assign_genre")
     graph.add_conditional_edges("assign_genre", lambda s: END if s.get("has_error") else "final_genre_summary")
-    graph.add_edge("final_genre_summary", END)
-
     graph.add_edge("final_genre_summary", END)
 
     return graph.compile()

@@ -16,7 +16,7 @@ class LLMFactory:
             return GeminiCrewLLM().get_llm()
         
     @staticmethod
-    def build_langchain_llm(llm_param):
+    def build_langchain_llm():
         if _active_llm.name == OpenAICrewLLM.llm_model():
             return OpenAILangchainLLM().get_llm()
         elif _active_llm.name == GeminiCrewLLM.llm_model():
