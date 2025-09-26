@@ -27,11 +27,15 @@ class WebCrawl(BaseModel):
     tools: List[SimpleComponentConfigModel]
     parallel_executor: int
 
+class GenreModel(BaseModel):
+    assign_genre: List[SimpleComponentConfigModel]
+    genre_list: List[str]
+
 class AppConfigModel(BaseModel):
     _llm: List[LLMConfigModel] = PrivateAttr()
     _web_crawl: WebCrawl = PrivateAttr()
     _summarizer: List[LLMComponentConfigModel] = PrivateAttr()
-    _assign_genre: List[SimpleComponentConfigModel] = PrivateAttr()
+    _genre: GenreModel = PrivateAttr()
 
     @classmethod
     def from_json_file(cls, file_path: str) -> "AppConfigModel":
@@ -45,7 +49,7 @@ class AppConfigModel(BaseModel):
         instance._llm = [LLMConfigModel(**llm) for llm in data.get("llm", [])]
         instance._web_crawl = WebCrawl(**data.get("web_crawl", {}))
         instance._summarizer = [LLMComponentConfigModel(**item) for item in data.get("summarizer", [])]
-        instance._assign_genre = [SimpleComponentConfigModel(**item) for item in data.get("assign_genre", [])]
+        instance._genre = GenreModel(**data.get("genre", {}))
         return instance
 
     def _get_active_or_first(self, items: List[BaseModel]) -> Optional[BaseModel]:
@@ -72,7 +76,11 @@ class AppConfigModel(BaseModel):
     @property
     def active_summarizer(self) -> Optional[LLMComponentConfigModel]:
         return self._get_active_or_first(self._summarizer)
+    
+    @property
+    def genre_list(self) -> List[str]:
+        return self._genre.genre_list
 
     @property
     def active_assign_genre(self) -> Optional[SimpleComponentConfigModel]:
-        return self._get_active_or_first(self._assign_genre)
+        return self._get_active_or_first(self._genre.assign_genre)

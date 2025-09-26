@@ -121,6 +121,9 @@ def _extract_from_urls(crawl_urls: list[TavilyResultItem] = []):
 
 @tool
 def get_news_content(crawl_urls: list[TavilyResultItem] = []):
+    """
+    Web search to get the content from the url. Select the tool based on config for web crawlling. 
+    """
     active_crawl = web_crawl_config.active_web_crawl
     match active_crawl.name:
         case "tavily_crawl":

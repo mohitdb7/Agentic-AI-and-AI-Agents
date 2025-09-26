@@ -124,7 +124,7 @@ def summarise_news(state: NewsAgentState) -> NewsAgentState:
 
 def assign_genre(state: NewsAgentState) -> NewsAgentState:
     try:
-        if is_mock:
+        if not is_mock:
             result = GenreSumarisedModel.from_json_file("mock_run/json_files/tavily_AI_Genre_Summary.json")
             time.sleep(5)
         else:

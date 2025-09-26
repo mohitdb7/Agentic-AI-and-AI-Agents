@@ -1,6 +1,9 @@
 from news_agent_flow.prompts import GenrePrompts
 from news_agent_flow.llm import LLMFactory
 from news_agent_flow.models import SummarisedNewsArticle, GenreSumarisedModel
+from news_agent_flow.configs import AppConfigModel
+
+app_config = AppConfigModel.from_json_file("news_agent_flow/configs/agent_config.json")
 
 class GenreManager:
     def parse_genre(self, genres):
@@ -9,12 +12,7 @@ class GenreManager:
         elif isinstance(genres, str):
             return genres
         else:
-            return ", ".join([
-                        "Politics", "Sports", "Business", "Technology", "Science", "Health",
-                        "Entertainment", "Crime", "World", "Environment", "Economy",
-                        "Culture", "Education", "Law", "Military", "Religion",
-                        "Opinion", "Travel", "AI & Emerging Tech", "Local News"
-                    ])
+            return ", ".join(app_config.genre_list)
     def assign_genre(self):
         prompt = GenrePrompts.get_genre_prompt()
         
@@ -44,12 +42,7 @@ class GenreManager:
         return result
 
     def assign_genre_to_summaries(self, news_summaries: list[SummarisedNewsArticle]) -> GenreSumarisedModel:
-        genres = [
-                        "Politics", "Sports", "Business", "Technology", "Science", "Health",
-                        "Entertainment", "Crime", "World", "Environment", "Economy",
-                        "Culture", "Education", "Law", "Military", "Religion",
-                        "Opinion", "Travel", "AI & Emerging Tech", "Local News"
-                    ]
+        genres = app_config.genre_list
 
         genre_str = self.parse_genre(genres)
 
