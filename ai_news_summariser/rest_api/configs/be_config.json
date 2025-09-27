@@ -4,11 +4,11 @@
             "url": "mongodb://localhost",
             "port": 27017,
             "row_expiry": 600,
-            "is_active" : false
+            "is_active" : true
         },
         "local": {
             "row_expiry": 600,
-            "is_active": true
+            "is_active": false
         }
     },
     "stream_sequence": ["search_the_web", "summarise_the_news", "assign_genre", "final_genre_summary"],
