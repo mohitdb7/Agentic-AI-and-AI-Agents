@@ -3,6 +3,11 @@ from typing import List, Optional
 import json
 from pathlib import Path
 
+class LogExpiryModel(BaseModel):
+    days: int = 0
+    hours: int = 0
+    minutes: int = 0
+
 class ModelConfigModel(BaseModel):
     langchain: str
     crew_ai: str
@@ -32,6 +37,9 @@ class GenreModel(BaseModel):
     genre_list: List[str]
 
 class AppConfigModel(BaseModel):
+    is_mock: bool
+    log_expiry: Optional[LogExpiryModel] = None
+
     _llm: List[LLMConfigModel] = PrivateAttr()
     _web_crawl: WebCrawl = PrivateAttr()
     _summarizer: List[LLMComponentConfigModel] = PrivateAttr()
@@ -45,7 +53,13 @@ class AppConfigModel(BaseModel):
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        instance = cls()
+        log_expiry_data = data.get("log_expiry", {})
+        log_expiry = LogExpiryModel(**log_expiry_data)
+
+        instance = cls(
+                is_mock=data.get("is_mock", True),
+                log_expiry=log_expiry
+            )
         instance._llm = [LLMConfigModel(**llm) for llm in data.get("llm", [])]
         instance._web_crawl = WebCrawl(**data.get("web_crawl", {}))
         instance._summarizer = [LLMComponentConfigModel(**item) for item in data.get("summarizer", [])]

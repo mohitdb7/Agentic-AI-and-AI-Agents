@@ -32,6 +32,13 @@ class ConfigModel(BaseModel):
     stream_events: Dict[str, str]
     server_config: ServerConfig
 
+    @property
+    def active_storage(self) -> Optional[Dict[str, BaseModel]]:
+        for name, config in self.storage.__dict__.items():
+            if getattr(config, "is_active", False):
+                return {name: config}
+        return None
+
     @staticmethod
     def from_json_file(file_path: str) -> "ConfigModel":
         path = Path(file_path)

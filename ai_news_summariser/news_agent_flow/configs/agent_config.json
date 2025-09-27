@@ -1,4 +1,10 @@
 {
+    "is_mock": true,
+    "log_expiry":{
+        "days":0,
+        "hours":0,
+        "minutes":5
+    },
     "llm":[
         {
             "name": "gemini",
