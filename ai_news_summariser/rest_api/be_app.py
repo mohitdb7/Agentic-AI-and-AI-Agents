@@ -4,7 +4,6 @@ import json
 from starlette.responses import StreamingResponse
 import asyncio
 
-from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
 from typing import List
 from rest_api.models import NewsSummaryResult
@@ -17,7 +16,7 @@ import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from news_agent_flow import create_news_agent_flow
+from news_agent_flow import create_news_agent_with_final_summary_flow
 from rest_api.storage import StorageManager
 
 
@@ -45,7 +44,7 @@ app = FastAPI(title="News Summariser")
 StorageManager.initialize()
 
 #Graph instance
-graph = create_news_agent_flow()
+graph_final_summary = create_news_agent_with_final_summary_flow()
 
 
 @app.on_event("startup")
@@ -109,7 +108,7 @@ async def news_agent_stream(query: str):
 
         try:
             await StorageManager.cleanup(f"{query_key}")
-            events = graph.stream({"query": f"latest news on {query_key}"}, stream_mode="updates")
+            events = graph_final_summary.stream({"query": f"latest news on {query_key}"}, stream_mode="updates")
 
             for event in events:
                 for key, value in event.items():
