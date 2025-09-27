@@ -3,6 +3,10 @@ from typing import List, Dict, Optional
 from pathlib import Path
 import json
 
+class LogExpiryModel(BaseModel):
+    days: int = 0
+    hours: int = 0
+    minutes: int = 0
 
 class MongoConfig(BaseModel):
     url: str
@@ -31,6 +35,7 @@ class ConfigModel(BaseModel):
     stream_sequence: List[str]
     stream_events: Dict[str, str]
     server_config: ServerConfig
+    log_expiry: LogExpiryModel
 
     @property
     def active_storage(self) -> Optional[Dict[str, BaseModel]]:

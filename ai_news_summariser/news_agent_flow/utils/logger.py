@@ -52,7 +52,7 @@ def cleanup_old_logs(days: int = 0, hours: int = 0, minutes: int = 0):
                         os.remove(os.path.join(folder_path, f))
                     os.rmdir(folder_path)
         except Exception as e:
-            print(f"Exception while writing the logs {str(e)}")
+            print(f"Exception while Deleting the logs {str(e)}")
 
 def log_node(node_name: str):
     def decorator(func):

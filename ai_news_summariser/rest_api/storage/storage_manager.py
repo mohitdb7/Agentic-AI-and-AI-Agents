@@ -50,8 +50,8 @@ class StorageManager:
         return await cls._get_instance().get_document(query)
 
     @classmethod
-    async def get_all_documents(cls, query: str):
-        return await cls._get_instance().get_all_documents(query)
+    async def get_all_documents_count(cls, query: str) -> int:
+        return await cls._get_instance().get_all_documents_count(query)
 
     @classmethod
     async def cleanup(cls, query: str):

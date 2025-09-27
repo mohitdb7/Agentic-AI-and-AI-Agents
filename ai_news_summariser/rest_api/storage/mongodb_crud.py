@@ -17,7 +17,7 @@ class MongoDBStorage(StorageInterface):
         except Exception as e:
             print(f"Exception in starting the mongo db {e}")
 
-    async def get_all_documents(self, query: str):
+    async def get_all_documents_count(self, query: str) -> int:
         try:
             cursor = self.collection.find({"genre": {"$regex": query, "$options": "i"}})
             documents = await cursor.to_list(length=None)

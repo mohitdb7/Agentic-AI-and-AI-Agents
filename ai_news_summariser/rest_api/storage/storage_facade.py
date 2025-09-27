@@ -4,7 +4,7 @@ from rest_api.models import NewsSummaryResult
 class StorageInterface(ABC):
 
     @abstractmethod
-    async def get_all_documents(self, query: str):
+    async def get_all_documents_count(self, query: str) -> int:
         pass
 
     @abstractmethod
