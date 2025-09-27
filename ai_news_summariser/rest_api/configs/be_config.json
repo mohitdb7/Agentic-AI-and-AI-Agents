@@ -4,10 +4,11 @@
             "url": "mongodb://localhost",
             "port": 27017,
             "row_expiry": 600,
-            "is_active" : true
+            "is_active" : false
         },
         "local": {
-            "is_active": false
+            "row_expiry": 600,
+            "is_active": true
         }
     },
     "stream_sequence": ["search_the_web", "summarise_the_news", "assign_genre", "final_genre_summary"],
@@ -21,6 +22,6 @@
     "server_config": {
         "path": "rest_api.be_app:app",
         "host": "0.0.0.0",
-        "port": "8080"
+        "port": 8080
     }
 }

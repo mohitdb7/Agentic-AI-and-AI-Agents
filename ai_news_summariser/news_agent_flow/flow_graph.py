@@ -30,7 +30,7 @@ def create_news_agent_flow():
     return graph.compile()
 
 # Invoke the graph
-graph = create_news_agent_flow()
-output = graph.invoke({"query": "latest news on AI advancements in the last week"})
-print("Graph completed")
+# graph = create_news_agent_flow()
+# output = graph.invoke({"query": "latest news on AI advancements in the last week"})
+# print("Graph completed")
 # print(output)
