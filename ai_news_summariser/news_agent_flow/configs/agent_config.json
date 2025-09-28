@@ -1,5 +1,5 @@
 {
-    "is_mock": true,
+    "is_mock": false,
     "log_expiry":{
         "days":0,
         "hours":0,
@@ -14,7 +14,7 @@
                 "default": "gemini-2.0-flash"
             },
             "temprature": 0.1,
-            "is_active": true
+            "is_active": false
         },
         {
             "name": "open_ai",
@@ -24,18 +24,18 @@
                 "default": "gpt-4"
             },
             "temprature": 0.1,
-            "is_active": false
+            "is_active": true
         }
     ],
     "web_crawl": {
         "tools": [
             {
                 "name": "tavily_crawl",
-                "is_active": true
+                "is_active": false
             },
             {
                 "name": "tavily_extract",
-                "is_active": false
+                "is_active": true
             }
         ], "parallel_executor": 1
     },
