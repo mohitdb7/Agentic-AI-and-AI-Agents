@@ -1,0 +1,12 @@
+{
+    "base_url": "http://localhost",
+    "port": 8080,
+    "endpoints": {
+        "news_summariser" : {
+            "method" : "get",
+            "transport_type": "stream",
+            "url" : "/news_summariser",
+            "query_param" : ["query"]
+        }
+    }
+}

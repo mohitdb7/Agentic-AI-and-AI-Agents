@@ -12,7 +12,9 @@ from collections import defaultdict
 from streamlit.runtime.scriptrunner import add_script_run_ctx 
 # Assuming models.py is available
 from models import WebResponseModel, SummarisedNewsArticleModel, NewsGenredSummaryModel, OutputGenreSummarisedResponseModel
+from configs import FE_ConfigModel
 
+fe_config = FE_ConfigModel.from_json_file("front_end_ui/configs/fe_config.json")
 
 GENRES = ["Politics", "Technology", "AI", "Sports", "Business", "Health"]
 
@@ -404,7 +406,7 @@ def main():
 
     # Genre chips
     selected_genres = st.multiselect("Select Genres", GENRES, default=["AI"])
-    url = st.text_input("Streaming API URL", "http://localhost:8080/news_summariser")
+    url = f"{fe_config.base_url}:{fe_config.port}{fe_config.endpoints["news_summariser"].url}"# st.text_input("Streaming API URL", "http://localhost:8080/news_summariser")
 
     # Session state initialization
     if "streaming" not in st.session_state:
