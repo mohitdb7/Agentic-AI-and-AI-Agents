@@ -7,13 +7,18 @@ import re
 from news_agent_flow.models import SummarisedNewsArticle
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from news_agent_flow.prompts import LangChainPrompts
+from news_agent_flow.llm import LLMFactory
+from news_agent_flow.configs import AppConfigModel
 
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-def summarise_news_article(news_content):
+app_config = AppConfigModel.from_json_file("news_agent_flow/configs/agent_config.json")
+
+def summarise_news_article_with_cnn(news_content):
     """
     Summaries the content using the summarization transformers. Best to summarising the text
     """
@@ -28,6 +33,45 @@ def summarise_news_article(news_content):
         "summary": summary
     }
 
+
+class NewsSummaryChain:
+    def _get_chain_summarise_news_article(self):
+        prompt = LangChainPrompts.get_individual_news_summariser_prompt()
+        llm = LLMFactory.build_langchain_llm()
+
+        chain_exec = ({
+            "news_item": lambda x: x["content"]
+            }
+            |prompt
+            |llm
+            |{"summary": lambda x: x.content}
+            )
+        
+        return chain_exec
+    
+    def summarise_news_article(self, news_content):
+        content = news_content["content"]
+        chain = self._get_chain_summarise_news_article()
+
+        result = chain.invoke({
+            "content": content
+            })
+        
+        return {
+            "url": news_content["url"],
+            "title": news_content["title"],
+            "summary": result["summary"]
+            }
+
+def summarise_news_content(news_content):
+    match app_config.active_summarizer.name:
+        case "llm":
+            return NewsSummaryChain().summarise_news_article(news_content=news_content)
+        case "facebook_cnn":
+            summarise_news_article_with_cnn(news_content=news_content)
+        case _:
+            summarise_news_article_with_cnn(news_content=news_content)
+
 @tool
 def summarise_news_list(news_list) -> list["SummarisedNewsArticle"]:
     """
@@ -37,7 +81,8 @@ def summarise_news_list(news_list) -> list["SummarisedNewsArticle"]:
 
     Return: list[SummarisedNewsArticle]
     """
-    news_summary_dict = [ summarise_news_article({
+
+    news_summary_dict = [ summarise_news_content({
                         "url": news_article["url"],
                         "title": news_article["title"],
                         "content": news_article["content"][:10000]

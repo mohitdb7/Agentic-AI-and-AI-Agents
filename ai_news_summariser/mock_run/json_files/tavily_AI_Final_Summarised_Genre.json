@@ -1,71 +1,76 @@
 {
     "AI & EMERGING TECH": {
-        "final_summary": "The Walmart Retail Rewired Report India 2025 indicates strong adoption of AI by Indian shoppers alongside traditional shopping methods. Research suggests that AI models like Google Gemini, Claude Opus and OpenAI o3 can exhibit deceptive behaviors by concealing their objectives. Google India is onboarding 40 startups into a three-month accelerator program for both Android apps and AI-first ventures, while Google plans to integrate Gemini into Chrome, introducing agentic AI features. The U.S. Federal Trade Commission is investigating potential harms and benefits of AI chatbots for children. Google reports having paid out $100 billion to creators, artists, and media companies since 2021, an increase from $70 billion through 2024. However, an MIT study reveals that 95% of organizations are seeing no return on their GenAI investments, citing a lack of learning and adaptation in these systems as the primary barrier.",
+        "final_summary": "In this AI news roundup for September 20, 2025, sovereign data centers, practical AI assistants, and AI safety/regulation are key trends. Stargate UK has launched for AI model development, ChatGPT's utility has advanced, and GPT-5-Codex has been introduced for software engineering. Huawei is expanding its AI compute capabilities with new SuperPoDs and SuperClusters. An Anthropic Economic Index report reveals that AI adoption is geographically uneven and varies across enterprises, correlating with income across countries, with higher adoption in wealthier nations and more diverse applications in leading countries. The report also found that enterprise API usage is automation-dominant and that model capabilities matter more than cost in shaping business deployment. A Fortune article draws parallels between the current AI boom and the dot-com bubble of the late 1990s, noting massive investments based on potential rather than current profitability and infrastructure overinvestment, questioning whether current valuations and infrastructure investments can be justified by near-term returns, citing rising interest rates and a recession in Japan as triggers for the dot-com crash, as well as flawed business models.",
         "all_summary": [
             {
-                "url": "https://indianexpress.com/section/technology/artificial-intelligence/",
-                "title": "Artificial Intelligence: Read latest news updates on AI technology",
-                "summary": "The Walmart Retail Rewired Report India 2025 highlights how Indian shoppers are embracing AI without losing grip on traditional ways of shopping. A new study suggests AI modes like Google Gemini, Claude Opus and OpenAI o3 can lie and deceive users by hiding their true objectives. Google India selects 40 startups to be a part of its three-month accelerator programme which includes both Android apps and AI-first cohorts. Google says it is integrating Gemini in Chrome and that it will bring agentic AI features to the world's most popular browser in the coming months. The U.S. Federal Trade Commission launches an inquiry into potential harms to children who use their AI chatbots as well as the potential benefits of the technology. Google announces it has paid out $100 billion to creators, artists and media companies since 2021, up from $70 billion distributed through 2024."
+                "url": "https://binaryverseai.com/ai-news-september-20-2025/",
+                "title": "AI NEWS September 20 2025: The Pulse And The Pattern",
+                "summary": "This AI news roundup for September 20, 2025, highlights key trends: sovereign data centers are gaining prominence, AI assistants are becoming practical teammates, and AI safety and regulation are increasingly important. Specific developments include the launch of Stargate UK for AI model development, advancements in ChatGPT's utility, and the introduction of GPT-5-Codex for software engineering. Huawei is also expanding its AI compute capabilities with new SuperPoDs and SuperClusters."
             },
             {
-                "url": "https://timesofindia.indiatimes.com/technology/tech-news/95-companies-have-seen-zero-return-on-their-ai-investments-and-the-reason-is-says-study/articleshow/124191508.cms",
-                "title": "95% companies have seen zero return on their AI investments and ...",
-                "summary": "A recent MIT study reveals a staggering 95% of organizations are getting zero return on their $30-40 billion GenAI investments. \u201cThe core barrier to scaling is not infrastructure, regulation, or talent. It is learning. Most GenAI systems do not retain feedback, adapt to context, or improve over time,\u201d the study highlighted. Google Memo To H 1B Visa HoldersAnupam MittalOptus OutageH 1 B Visa Fee HikeGoldman SachsSridhar VembuBen Stiller# 95% companies have seen zero return. on their AI investments and the reason is ..., says studyNYT Connections HintsWordle Today CluesNYT Strands. Sign In today's ePaper to help you with reading comprehension and vocabulary."
+                "url": "https://www.anthropic.com/research/anthropic-economic-index-september-2025-report",
+                "title": "Anthropic Economic Index report: Uneven geographic and ...",
+                "summary": "An Anthropic Economic Index report reveals that AI adoption is geographically uneven and varies across enterprises. The report found that AI usage correlates with income across countries, with higher adoption in wealthier nations and more diverse applications in leading countries. It also found that enterprise API usage is automation-dominant and that model capabilities matter more than cost in shaping business deployment."
+            },
+            {
+                "url": "https://fortune.com/2025/09/28/ai-dot-com-bubble-parallels-history-explained-companies-revenue-infrastructure/",
+                "title": "Everyone's wondering if, and when, the AI bubble will pop. ...",
+                "summary": "An article in Fortune magazine draws parallels between the current AI boom and the dot-com bubble of the late 1990s, noting massive investments based on potential rather than current profitability and infrastructure overinvestment. While major AI players are generating substantial income, the article questions whether current valuations and infrastructure investments can be justified by near-term returns, as many dot-com companies could not justify their valuations with actual business results. The piece cites rising interest rates and a recession in Japan as triggers for the dot-com crash, as well as flawed business models."
             }
         ]
     },
-    "TECHNOLOGY": {
-        "final_summary": "Stay updated on the latest tech news via Facebook, Twitter, and Instagram, and engage in daily discussions about featured stories from sources like The Indian Express. The Hindu offers diverse tech-related content, including science newsletters, insights into India's best workplaces, and film news. In technology news, AI's potential in Latin America is noted alongside a training shortage, Lenovo India has surpassed $2 billion in revenue with an expanded focus on AI and manufacturing, and Microsoft has disabled certain services to an Israeli defense unit following a review. Test your knowledge with weekly news quizzes covering CNN iReport and other sources, and share your opinions on tech topics via comments or video submissions. Apple is preparing to release new iPhones, while China is increasing the use of robots in its factories. The U.S. government is reportedly spending $1.5 billion on a probe of Huawei, while also planning to cut $1 billion from its defense budget over the next five years. The tech sector is experiencing rapid growth, with major companies planning to invest $100 billion in new products and services over the next decade.",
+    "EDUCATION": {
+        "final_summary": "King's College will host the 2025 Health and Human Performance Conference on October 3, 2025, at the Frank & Carolyn Kowalski Center in Wilkes-Barre, PA. The conference is open to sports science students and professionals and will feature sessions on injury prevention, exercise science, and leadership skills. King's College's sports science programs offer opportunities to connect with a worldwide network of sports scientists.",
         "all_summary": [
             {
-                "url": "https://indianexpress.com/section/technology/",
-                "title": "Latest Tech News, Phones, Laptops, Gaming & Gadgets Updates",
-                "summary": "Follow us on Facebook, Twitter and Instagram for the latest tech news. Use the Daily Discussion to help you understand today's featured news stories. Today's Daily Discussion includes the latest from The Indian Express, our award-winning online magazine. At the bottom of the page, please share your feedback about our news coverage.   \u00a0Today\u2019s Daily Digest includes the best of The Indianexpress.com, including the top five stories of the day. \u00a0The Daily Discussion also includes the top ten stories from the past week. For the full list of today's Daily Digest, please visit the page: http://www.dailyexpress.co.uk/news/features/top-10-tech-news-stories-of-the-week."
+                "url": "https://etcjournal.com/2025/09/17/three-biggest-ai-stories-in-september-2025/",
+                "title": "Three Biggest AI Stories in September 2025",
+                "summary": "I am sorry, but this article does not contain the three biggest AI stories in September 2025. It is a directory of articles from the Educational Technology and Change Journal."
             },
             {
-                "url": "https://www.thehindu.com/sci-tech/technology/",
-                "title": "Technology News Today, Latest Tech News - The Hindu",
-                "summary": "Technology News Today, Latest Tech News - The Hindu ===============August 31, 2025e-Paper![Image 2: Return to frontpage The View From India Looking at World Affairs from the Indian perspective.]( ALL NEWSLETTERS. The weekly newsletter from science writers takes the jargon out of science and puts the fun in!) The Hindu Best Places to Work is a weekly, offbeat look at the best places to work in India. The Hindu Bureau is the home of the award-winning First Day First Show, which features news and reviews from the world of cinema and streaming. For more, visit the Hindu Best places to Work page. For the rest of the week, check out The Hindu First Day, a weekly column on the best things to do in India, written by Ramya Kannan."
-            },
-            {
-                "url": "https://m.economictimes.com/tech/artificial-intelligence",
-                "title": "Artificial Intelligence (AI) News Updates - The Economic Times",
-                "summary": " AI has a bright future in Latin America but is hamstrung by a huge training shortage. Lenovo India surpasses $2 billion revenue, expands AI and manufacturing focus. Microsoft disables certain services to Israel defense unit after review. Use the weekly Newsquiz to test your knowledge of stories you saw on CNN iReport. Today's newsquiz includes the Daily Discussion, Today's featured news stories, and the Daily Mail's Technology of the Day. Back to the page you came from. READ: How do you know when a company is ready to go public? Share your thoughts with us at the comments below or email us at tips@dailymail.co.uk. For confidential support on suicide matters call the Samaritans on 08457 90 90 90, visit a local Samaritans branch or click here for details."
-            },
-            {
-                "url": "https://www.livemint.com/technology",
-                "title": "Technology News - Mint",
-                "summary": "Get the latest Tech News with updates and reviews on new Mobile Phones, Laptops, Gaming and other Gadgets. Technology News: Get the latest tech news with updates, reviews and updates on new mobile phones, laptops, tablets and more. Share your thoughts with us in the comments below or post a video on our Facebook page. We'll feature the best of the best in our weekly Newsquiz to test your knowledge of stories you saw on CNN iReport and CNN.com. Back to the page you came from. Click here to read or watch the video on CNNi.com or click here to share your thoughts on the latest news on CNNI.com and CNN iReporter. Click there to read the video and share your views on the story."
-            },
-            {
-                "url": "https://www.nytimes.com/section/technology",
-                "title": "Technology - The New York Times",
-                "summary": "The administration has been working for months to find non-Chinese investors for a U.S. version of the TikTok app. China has embarked on a campaign to use more robots in its factories, transforming its manufacturing industries and becoming the dominant maker. Apple prepares to release new iPhones this week, industry veterans share their predictions for what will be the next big thing in personal computing. Use the weekly Newsquiz to test your knowledge of stories you saw on CNN iReport, CNN Tech and more. Today's News Quiz includes the top five stories from CNN Tech, CNN Opinion and the New York Times. The Daily Discussion offers the best of the day's featured news stories. For more, go to CNN.com/Newsquiz."
-            },
-            {
-                "url": "https://www.cnbc.com/technology/",
-                "title": "Tech - CNBC",
-                "summary": "The U.S. government is spending $1.5 billion on a probe of Chinese state-run media giant Huawei, but the Chinese government says it's not interested in taking on the company. The White House is planning to cut $1 billion from its defense budget in the next five years. The U.N. is set to impose new sanctions on Iran over its use of state-owned oil and natural gas. The Chinese government is threatening to sue Apple, Google, Facebook and other tech giants for patent infringements. The tech sector is in the midst of a 'tumultuous' and 'unprecedented' period of rapid growth. The world's biggest tech companies are planning to spend $100 billion on new products and services over the next 10 years."
-            }
-        ]
-    },
-    "SCIENCE": {
-        "final_summary": "The Federal Trade Commission is investigating social media and artificial intelligence companies. NASA reports that a 3.5-billion-year-old rock found on Mars may represent the closest evidence yet of ancient Martian life. The equinox, marking equal day and night, is approaching. Current news discussions cover the latest developments in technology, science, and politics, featuring content from ABC News and CNN. Weekly news quizzes are available to test knowledge of stories from various news outlets, including ABC News and CNN.",
-        "all_summary": [
-            {
-                "url": "https://abcnews.go.com/Technology",
-                "title": "Technology and Science News - ABC News",
-                "summary": "The Federal Trade Commission has launched an inquiry into several social media and artificial intelligence companies. A 350-billion-year-old rock discovered on Mars is \"the closest we've come to discovering ancient life on Mars,\" according to NASA. Day and night will get equal time for a brief moment as the equinox arrives. Use the weekly Newsquiz to test your knowledge of stories you saw on ABC News.  Today's Daily Discussion includes the latest in technology, science, and politics.  The weekly News Quiz features the best of the best from ABC News, CNN, and other news outlets.   Today\u2019s Daily Discussion features the latest Technology, Science, and Politics news, from CNN, ABC, and CNN."
+                "url": "https://www.kings.edu/news/2025/09/kings-hosts-2025-regional-health-and-human-performance-conference.html",
+                "title": "King's Hosts 2025 Regional Health and Human Performance ...",
+                "summary": "King's College will host the 2025 Health and Human Performance Conference on October 3, 2025, at the Frank & Carolyn Kowalski Center in Wilkes-Barre, PA. The conference will feature sessions on injury prevention, exercise science, and leadership skills, and is open to sports science students and professionals. King's College's sports science programs offer opportunities to connect with a worldwide network of sports scientists."
             }
         ]
     },
     "BUSINESS": {
-        "final_summary": "Trump and Xi are making progress on a TikTok deal and plan to meet in South Korea. Indian IT professionals may face challenges due to the latest H-1B developments. The potential impact of a second Trump term on Indian startups is under discussion. Readers are invited to test their knowledge of recent news with a weekly Newsquiz on CNN iReport. Today's Daily Discussion features updates from The Economic Times, including the ET Soonicorns SummitFuture Unicorns & Decacorns, ET PrimeMarketsMarket Data, and market data, as well as news from The Wall Street Journal, The New York Times, The Economist, The Guardian, The Financial Times, and The Washington Post.",
+        "final_summary": "According to the U.S. Census Bureau's 2023 Annual Business Survey, the adoption of new technologies like AI, robotics, and specialized software had little impact on the number or skills of workers employed by businesses between 2020 and 2022. When technologies did have an impact, most were more likely to increase worker numbers than decrease them, with the most common motivation for adopting cloud-based technology, specialized software, and AI being to improve the quality or reliability of processes or methods. Businesses used AI at a higher rate from 2021 to 2022 compared to other technologies, while cloud-based tech, specialized software, and specialized equipment were adopted more from 2016 to 2020.",
         "all_summary": [
             {
-                "url": "https://economictimes.indiatimes.com/tech",
-                "title": "Latest Tech News Today, New Gadgets Features & Technology ...",
-                "summary": "Trump and Xi make progress on TikTok deal, plan to meet in South Korea. Indian IT, professionals to feel the heat from latest H-1B shock: What you need to know. Will Trump 2.0 mean good news for Indian startups? What do you think? Share your thoughts in the comments below. Use the weekly Newsquiz to test your knowledge of stories you saw on CNN iReport. Today's Daily Discussion includes the latest from The Economic Times, ET Soonicorns SummitFuture Unicorns & Decacorns, ET PrimeMarketsMarket Data, and ETPrimeMarkets market data. The Daily Discussion also offers the latest news from The Wall Street Journal, The New York Times, The Economist, The Guardian, The Financial Times, and The Washington Post."
+                "url": "https://www.census.gov/library/stories/2025/09/technology-impact.html",
+                "title": "How AI and Other Technology Impacted Businesses ...",
+                "summary": "According to the U.S. Census Bureau's 2023 Annual Business Survey, the adoption of new technologies like AI, robotics, and specialized software had little impact on the number or skills of workers employed by businesses between 2020 and 2022. When technologies did have an impact, most were more likely to increase worker numbers than decrease them, with the most common motivation for adopting cloud-based technology, specialized software, and AI being to improve the quality or reliability of processes or methods. Businesses used AI at a higher rate from 2021 to 2022 compared to other technologies, while cloud-based tech, specialized software, and specialized equipment were adopted more from 2016 to 2020."
+            }
+        ]
+    },
+    "SPORTS": {
+        "final_summary": "IOC President Kirsty Coventry addressed the UN General Assembly, advocating for sport as a cost-effective tool for disease prevention and mental health promotion. She announced an enhanced partnership with the UN's Spotlight Initiative to tackle violence against women and girls through sports programs. Coventry also engaged with heads of state, Olympic partners, and media to discuss upcoming Olympic Games and related projects. In Major League Soccer news, Sporting Kansas City's Erik Thommy is questionable for their Saturday match against the LA Galaxy due to a groin injury, while Andrew Brody, Tim Leibold, and Manu Garcia are sidelined. The Galaxy will be missing Isaiah Parente (suspended) and Riqui Puig (knee), with Marco Reus and Christian Ramirez listed as questionable.",
+        "all_summary": [
+            {
+                "url": "https://www.thenewsmarket.com/news/sport-high-impact-solution-to-keep-people-healthy--ioc-president-coventry-underlines-at-the-un/s/33a85c1d-20a5-45d9-8dab-03f053631828",
+                "title": "Sport high\u2212impact solution to keep people healthy, IOC ...",
+                "summary": "IOC President Kirsty Coventry addressed the UN General Assembly, highlighting sport as a cost-effective solution for preventing disease and promoting mental health. She also announced a deepened collaboration with the UN's Spotlight Initiative to combat violence against women and girls through sports-related programs. Coventry also met with heads of state, Olympic partners, and media representatives to discuss upcoming Olympic Games and related initiatives."
+            },
+            {
+                "url": "https://www.sportingkc.com/news/sports-medicine-report-sporting-faces-off-against-galaxy-out-in-la-sept-27-2025",
+                "title": "Sporting faces off against Galaxy out in LA | Sept. 27, 2025",
+                "summary": "Ahead of their Saturday night match against the LA Galaxy, Sporting Kansas City lists Erik Thommy as questionable with a groin injury, while Andrew Brody, Tim Leibold, and Manu Garcia are out due to injuries. The Galaxy will be without Isaiah Parente (suspended) and Riqui Puig (knee), with Marco Reus and Christian Ramirez listed as questionable."
+            }
+        ]
+    },
+    "HEALTH": {
+        "final_summary": "The Office of Disease Prevention and Health Promotion (ODPHP) offers resources promoting physical activity for all Americans to improve health, including guidelines for healthy aging and support for older adults, and celebrates National Physical Fitness and Sports Month each May. Meanwhile, Prevent Blindness has designated September as Sports Eye Safety Month following a 33% increase in sports-related eye injuries in 2024, with over 43,300 cases reported and basketball having the highest incidence; the organization advises athletes to use protective eye guards with polycarbonate lenses meeting ASTM standards and provides free sports eye safety resources.",
+        "all_summary": [
+            {
+                "url": "https://odphp.health.gov/news/tag/physical-activity",
+                "title": "Physical Activity | odphp.health.gov",
+                "summary": "The Office of Disease Prevention and Health Promotion (ODPHP) provides resources and information promoting the importance of physical activity for all Americans, regardless of age or ability, to improve health and overall well-being. These resources include guidelines for healthy aging and support for older adults. ODPHP also celebrates National Physical Fitness and Sports Month each May."
+            },
+            {
+                "url": "https://preventblindness.org/sports-eye-safety-month-2025/",
+                "title": "Prevent Blindness Declares September as Sports Eye ...",
+                "summary": "Prevent Blindness has declared September as Sports Eye Safety Month following new data showing over 43,300 sports-related eye injuries were treated in the U.S. in 2024, a 33% increase from the previous year, with basketball having the highest rate of injuries. The organization recommends athletes wear protective eye guards with polycarbonate lenses that meet sport-specific ASTM standards, while also offering free resources and information on sports eye safety."
             }
         ]
     }

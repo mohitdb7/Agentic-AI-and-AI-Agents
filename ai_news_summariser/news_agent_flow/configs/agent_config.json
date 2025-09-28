@@ -48,17 +48,12 @@
         {
             "name": "facebook_cnn",
             "model": "facebook/bart-large-cnn",
+            "is_active": false
+        },
+        {
+            "name": "llm",
+            "model": "",
             "is_active": true
-        },
-        {
-            "name": "open_ai_llm",
-            "model": "gpt-4",
-            "is_active": false
-        },
-        {
-            "name": "gemini_llm",
-            "model": "gemini-2.0-flash",
-            "is_active": false
         }
     ], 
     "genre": {

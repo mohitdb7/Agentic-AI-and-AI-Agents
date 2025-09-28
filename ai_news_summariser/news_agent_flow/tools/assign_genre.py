@@ -1,4 +1,4 @@
-from news_agent_flow.prompts import GenrePrompts
+from news_agent_flow.prompts import LangChainPrompts
 from news_agent_flow.llm import LLMFactory
 from news_agent_flow.models import SummarisedNewsArticle, GenreSumarisedModel
 from news_agent_flow.configs import AppConfigModel
@@ -14,7 +14,7 @@ class GenreManager:
         else:
             return ", ".join(app_config.genre_list)
     def assign_genre(self):
-        prompt = GenrePrompts.get_genre_prompt()
+        prompt = LangChainPrompts.get_genre_prompt()
         
         llm = LLMFactory.build_langchain_llm()
 
