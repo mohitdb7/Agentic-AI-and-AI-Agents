@@ -27,9 +27,11 @@ class StorageManager:
                 cls._instance = MongoDBStorage(collection)
             except Exception as e:
                 print(f"Failed to init the mongoDB - {str(e)}")
-                cls._instance = InMemoryStorage()
+                storage_config = be_config.storage.local
+                cls._instance = InMemoryStorage(ttl_minutes=storage_config.row_expiry)
         else:
-            cls._instance = InMemoryStorage()
+            storage_config = be_config.storage.local
+            cls._instance = InMemoryStorage(ttl_minutes=storage_config.row_expiry)
 
     @classmethod
     async def startup_setup(cls):

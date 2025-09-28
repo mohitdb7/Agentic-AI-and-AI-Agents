@@ -16,6 +16,7 @@ class MongoConfig(BaseModel):
 
 
 class LocalStorageConfig(BaseModel):
+    row_expiry: int
     is_active: bool
 
 
