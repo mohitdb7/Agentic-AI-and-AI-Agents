@@ -8,6 +8,12 @@ app_config = AppConfigModel.from_json_file("news_agent_flow/configs/agent_config
 
 # Graph creation
 def create_news_agent_with_final_summary_flow():
+    """
+    Fetches the News from web.
+    Summarises it.
+    Assigns Genre
+    Creates a Summary for each Genre
+    """
     # Run cleanup before executing
     cleanup_old_logs(days=app_config.log_expiry.days, hours=app_config.log_expiry.hours, minutes=app_config.log_expiry.minutes)
 
@@ -30,6 +36,10 @@ def create_news_agent_with_final_summary_flow():
     return graph.compile()
 
 def create_news_agent_with_news_summary_flow():
+    """
+    Fetches the News from web.
+    Summarises it.
+    """
     # Run cleanup before executing
     cleanup_old_logs(days=app_config.log_expiry.days, hours=app_config.log_expiry.hours, minutes=app_config.log_expiry.minutes)
 

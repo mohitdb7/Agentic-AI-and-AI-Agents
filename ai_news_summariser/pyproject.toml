@@ -3,23 +3,23 @@ name = "ai-news-summariser"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = "==3.13.2"
 dependencies = [
-    "beautifulsoup4>=4.13.5",
-    "crewai>=0.193.0",
-    "dataclasses>=0.8",
-    "dotenv>=0.9.9",
-    "fastapi>=0.117.1",
-    "langchain>=0.3.27",
-    "langchain-google-genai>=2.1.12",
-    "langchain-openai>=0.3.33",
-    "langgraph>=0.6.7",
-    "motor>=3.7.1",
-    "pathlib>=1.0.1",
-    "pydantic>=2.11.9",
-    "sseclient>=0.0.27",
-    "tavily-python>=0.7.12",
-    "torch>=2.8.0",
-    "transformers>=4.56.1",
-    "uvicorn>=0.36.0",
+    "beautifulsoup4==4.13.5",
+    "crewai==0.193.0",
+    "dataclasses==0.8",
+    "dotenv==0.9.9",
+    "fastapi==0.117.1",
+    "langchain==0.3.27",
+    "langchain-google-genai==2.1.12",
+    "langchain-openai==0.3.33",
+    "langgraph==0.6.7",
+    "motor==3.7.1",
+    "pathlib==1.0.1",
+    "pydantic==2.11.9",
+    "sseclient==0.0.27",
+    "tavily-python==0.7.12",
+    "torch==2.8.0",
+    "transformers==4.56.1",
+    "uvicorn==0.36.0",
 ]
