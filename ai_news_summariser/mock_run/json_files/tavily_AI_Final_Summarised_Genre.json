@@ -1,76 +1,56 @@
 {
+    "POLITICS": {
+        "final_summary": "At the recent National Conservatism Conference, conservatives, including Senator Josh Hawley, voiced concerns over the impact of artificial intelligence (AI) on society and children, criticizing the power and ideology of AI companies. They warned against the potential dangers of transhumanism, arguing it undermines individual worth and liberty. Some speakers emphasized the potential to guide AI's development through political action, underscoring the need for caution and dialogue. Meanwhile, President Donald Trump and his administration have been leveraging AI to create and share imaginative images of the president on their social media accounts. Despite their clear artificiality, these images continue to attract significant attention online, reflecting the growing appeal of AI-generated content. Recently, Trump shared an AI-generated video on his Truth Social page, falsely presenting a Fox News segment where he allegedly announces a new healthcare system involving \"medbed hospitals\" and a national medbed card for every citizen, a term associated with a QAnon conspiracy theory. The video was later removed from Trump's page.",
+        "all_summary": [
+            {
+                "url": "https://wng.org/opinions/the-rights-looming-war-over-ai-1759027561",
+                "title": "The right's looming war over AI - WORLD News Group",
+                "summary": "Conservatives are increasingly expressing concerns over the effects of artificial intelligence (AI) on society and children. At the recent National Conservatism Conference, figures such as Senator Josh Hawley criticized the power and ideology of AI companies and warned against the potential dangers of transhumanism, which they argue undermines individual worth and liberty. While some speakers denounced the business models of AI companies, others emphasized the potential to steer the development of AI through political action, highlighting the need for dialogue and caution in managing AI's growth."
+            },
+            {
+                "url": "https://abcnews.go.com/Technology/wireStory/trumps-team-posting-ai-portraits-clicking-126032715",
+                "title": "Trump's team keeps posting AI portraits of him. We keep clicking",
+                "summary": "President Donald Trump and his administration have been using artificial intelligence (AI) to create and share fantastical images of the president on their social media accounts. These AI-generated images depict Trump in various heroic or powerful roles and, despite their clear artificiality, they continue to garner significant attention and engagement online. This trend reflects the growing appeal of AI-generated content, both for its ease of creation and its potential to reinforce subjective conceptions of reality."
+            },
+            {
+                "url": "https://www.yahoo.com/news/articles/trump-shared-then-deleted-ai-151909588.html",
+                "title": "Trump Shared And Then Deleted An AI-Generated Video Of Him ...",
+                "summary": "President Donald Trump recently shared an AI-generated video on his Truth Social page, presenting a false Fox News segment where he allegedly announces a new healthcare system involving \"medbed hospitals\" and a national medbed card for every citizen. Medbed is a term associated with a conspiracy theory circulating in QAnon circles that pertains to secret medical beds purported to cure any condition. The video was subsequently deleted from Trump's page."
+            }
+        ]
+    },
     "AI & EMERGING TECH": {
-        "final_summary": "In this AI news roundup for September 20, 2025, sovereign data centers, practical AI assistants, and AI safety/regulation are key trends. Stargate UK has launched for AI model development, ChatGPT's utility has advanced, and GPT-5-Codex has been introduced for software engineering. Huawei is expanding its AI compute capabilities with new SuperPoDs and SuperClusters. An Anthropic Economic Index report reveals that AI adoption is geographically uneven and varies across enterprises, correlating with income across countries, with higher adoption in wealthier nations and more diverse applications in leading countries. The report also found that enterprise API usage is automation-dominant and that model capabilities matter more than cost in shaping business deployment. A Fortune article draws parallels between the current AI boom and the dot-com bubble of the late 1990s, noting massive investments based on potential rather than current profitability and infrastructure overinvestment, questioning whether current valuations and infrastructure investments can be justified by near-term returns, citing rising interest rates and a recession in Japan as triggers for the dot-com crash, as well as flawed business models.",
+        "final_summary": "The integration of artificial intelligence (AI) into various industries has transitioned from a curiosity to an obligation, becoming an instinctive first step in sectors such as banking and payments for tasks like sales, client management, and fraud detection. A survey reveals that 98% of U.S. product leaders believe generative AI will reshape operations within three years, despite potential risks like bias amplification and regulatory issues. Research by online CV company LiveCareer UK indicates that AI could potentially alter nearly a million jobs in London, impacting sectors ranging from telemarketing and bookkeeping to fast food, warehousing, retail, paralegal work, and proofreading. The study also suggests that women are at higher risk due to their occupation of more roles susceptible to AI's impact. In healthcare, the NHS is leveraging AI to improve workflows, such as optimizing medication dispensing in Queen Elizabeth Hospital's pharmacy.",
         "all_summary": [
             {
-                "url": "https://binaryverseai.com/ai-news-september-20-2025/",
-                "title": "AI NEWS September 20 2025: The Pulse And The Pattern",
-                "summary": "This AI news roundup for September 20, 2025, highlights key trends: sovereign data centers are gaining prominence, AI assistants are becoming practical teammates, and AI safety and regulation are increasingly important. Specific developments include the launch of Stargate UK for AI model development, advancements in ChatGPT's utility, and the introduction of GPT-5-Codex for software engineering. Huawei is also expanding its AI compute capabilities with new SuperPoDs and SuperClusters."
+                "url": "https://www.pymnts.com/artificial-intelligence-2/2025/reflexive-ai-when-gen-ai-becomes-a-new-business-default/",
+                "title": "Reflexive AI: When Gen AI Becomes a New Business Default",
+                "summary": "The use of artificial intelligence (AI) has become an instinctive first step rather than a conscious decision in many industries, changing from a curiosity to an obligation. AI has been integrated into various sectors, including banking for sales and client management, and payments for fraud detection, with a survey finding 98% of U.S. product leaders believe generative AI will reshape operations within three years. However, risks of reflexive AI adoption persist, such as potential bias amplification and regulatory issues."
             },
             {
-                "url": "https://www.anthropic.com/research/anthropic-economic-index-september-2025-report",
-                "title": "Anthropic Economic Index report: Uneven geographic and ...",
-                "summary": "An Anthropic Economic Index report reveals that AI adoption is geographically uneven and varies across enterprises. The report found that AI usage correlates with income across countries, with higher adoption in wealthier nations and more diverse applications in leading countries. It also found that enterprise API usage is automation-dominant and that model capabilities matter more than cost in shaping business deployment."
-            },
-            {
-                "url": "https://fortune.com/2025/09/28/ai-dot-com-bubble-parallels-history-explained-companies-revenue-infrastructure/",
-                "title": "Everyone's wondering if, and when, the AI bubble will pop. ...",
-                "summary": "An article in Fortune magazine draws parallels between the current AI boom and the dot-com bubble of the late 1990s, noting massive investments based on potential rather than current profitability and infrastructure overinvestment. While major AI players are generating substantial income, the article questions whether current valuations and infrastructure investments can be justified by near-term returns, as many dot-com companies could not justify their valuations with actual business results. The piece cites rising interest rates and a recession in Japan as triggers for the dot-com crash, as well as flawed business models."
+                "url": "https://www.bbc.com/news/articles/c07vmllz38jo",
+                "title": "AI could impact a million jobs in London, research suggests - BBC",
+                "summary": "Artificial Intelligence (AI) could potentially change nearly a million jobs in London, affecting various sectors including telemarketing, bookkeeping, data entry, fast food, warehousing, retail, paralegal work, and proofreading, according to research by online CV company LiveCareer UK. The study also suggests that women are at higher risk due to their occupation of more roles susceptible to AI's impact. Meanwhile, the NHS is using AI to improve workflows, like in Queen Elizabeth Hospital's pharmacy where AI is used to optimize medication dispensing."
             }
         ]
     },
-    "EDUCATION": {
-        "final_summary": "King's College will host the 2025 Health and Human Performance Conference on October 3, 2025, at the Frank & Carolyn Kowalski Center in Wilkes-Barre, PA. The conference is open to sports science students and professionals and will feature sessions on injury prevention, exercise science, and leadership skills. King's College's sports science programs offer opportunities to connect with a worldwide network of sports scientists.",
+    "TECHNOLOGY": {
+        "final_summary": "The AI startup Anthropic, backed by Amazon and valued at $183 billion, has launched its latest model, Claude Sonnet 4.5, which is proficient in coding, cybersecurity, finance, and research, and is designed to meet business needs more efficiently. The company is planning more launches in the near future. Meanwhile, Atlassian's research indicates that daily AI use has almost doubled in a year, increasing worker productivity by a third and saving approximately 1.4 hours per day. However, only a small percentage of organizations have reported significant efficiency gains, and there are concerns that AI could lead to burnout unless workdays are restructured. On another note, despite public apprehension about the speed of implementation and trust issues, state and local governments are increasingly employing AI to improve public service delivery. To alleviate these concerns, it is recommended that governments prioritize transparency, focus on digital maturity, and adopt a resident-first approach.",
         "all_summary": [
             {
-                "url": "https://etcjournal.com/2025/09/17/three-biggest-ai-stories-in-september-2025/",
-                "title": "Three Biggest AI Stories in September 2025",
-                "summary": "I am sorry, but this article does not contain the three biggest AI stories in September 2025. It is a directory of articles from the Educational Technology and Change Journal."
+                "url": "https://www.cnbc.com/2025/09/29/anthropic-claude-ai-sonnet-4-5.html",
+                "title": "Anthropic launches Claude Sonnet 4.5, its latest AI model - CNBC",
+                "summary": "Anthropic has launched its latest Artificial Intelligence model, Claude Sonnet 4.5, which is more efficient at coding, using computers, and meeting business needs. The Amazon-backed startup, valued at $183 billion, claims that the new model excels in areas such as cybersecurity, finance, and research, and is superior at generating high-quality code and identifying code improvements. The company plans further model launches in the near future.\n"
             },
             {
-                "url": "https://www.kings.edu/news/2025/09/kings-hosts-2025-regional-health-and-human-performance-conference.html",
-                "title": "King's Hosts 2025 Regional Health and Human Performance ...",
-                "summary": "King's College will host the 2025 Health and Human Performance Conference on October 3, 2025, at the Frank & Carolyn Kowalski Center in Wilkes-Barre, PA. The conference will feature sessions on injury prevention, exercise science, and leadership skills, and is open to sports science students and professionals. King's College's sports science programs offer opportunities to connect with a worldwide network of sports scientists."
-            }
-        ]
-    },
-    "BUSINESS": {
-        "final_summary": "According to the U.S. Census Bureau's 2023 Annual Business Survey, the adoption of new technologies like AI, robotics, and specialized software had little impact on the number or skills of workers employed by businesses between 2020 and 2022. When technologies did have an impact, most were more likely to increase worker numbers than decrease them, with the most common motivation for adopting cloud-based technology, specialized software, and AI being to improve the quality or reliability of processes or methods. Businesses used AI at a higher rate from 2021 to 2022 compared to other technologies, while cloud-based tech, specialized software, and specialized equipment were adopted more from 2016 to 2020.",
-        "all_summary": [
-            {
-                "url": "https://www.census.gov/library/stories/2025/09/technology-impact.html",
-                "title": "How AI and Other Technology Impacted Businesses ...",
-                "summary": "According to the U.S. Census Bureau's 2023 Annual Business Survey, the adoption of new technologies like AI, robotics, and specialized software had little impact on the number or skills of workers employed by businesses between 2020 and 2022. When technologies did have an impact, most were more likely to increase worker numbers than decrease them, with the most common motivation for adopting cloud-based technology, specialized software, and AI being to improve the quality or reliability of processes or methods. Businesses used AI at a higher rate from 2021 to 2022 compared to other technologies, while cloud-based tech, specialized software, and specialized equipment were adopted more from 2016 to 2020."
-            }
-        ]
-    },
-    "SPORTS": {
-        "final_summary": "IOC President Kirsty Coventry addressed the UN General Assembly, advocating for sport as a cost-effective tool for disease prevention and mental health promotion. She announced an enhanced partnership with the UN's Spotlight Initiative to tackle violence against women and girls through sports programs. Coventry also engaged with heads of state, Olympic partners, and media to discuss upcoming Olympic Games and related projects. In Major League Soccer news, Sporting Kansas City's Erik Thommy is questionable for their Saturday match against the LA Galaxy due to a groin injury, while Andrew Brody, Tim Leibold, and Manu Garcia are sidelined. The Galaxy will be missing Isaiah Parente (suspended) and Riqui Puig (knee), with Marco Reus and Christian Ramirez listed as questionable.",
-        "all_summary": [
-            {
-                "url": "https://www.thenewsmarket.com/news/sport-high-impact-solution-to-keep-people-healthy--ioc-president-coventry-underlines-at-the-un/s/33a85c1d-20a5-45d9-8dab-03f053631828",
-                "title": "Sport high\u2212impact solution to keep people healthy, IOC ...",
-                "summary": "IOC President Kirsty Coventry addressed the UN General Assembly, highlighting sport as a cost-effective solution for preventing disease and promoting mental health. She also announced a deepened collaboration with the UN's Spotlight Initiative to combat violence against women and girls through sports-related programs. Coventry also met with heads of state, Olympic partners, and media representatives to discuss upcoming Olympic Games and related initiatives."
+                "url": "https://www.techradar.com/pro/now-ai-is-everywhere-in-businesses-is-anyone-actually-using-it",
+                "title": "Now AI is everywhere in businesses, is anyone actually using it?",
+                "summary": "Atlassian's latest research reveals that daily AI use has nearly doubled in a year, making workers one-third more productive and saving around 1.4 hours per day. However, only 3% of organizations report significant gains in efficiency, with 2% seeing improvements in work quality and 4% noticing innovation improvements. The report also warns that AI could increase burnout unless workdays are restructured, as workers will spend more time on cognitively demanding tasks."
             },
             {
-                "url": "https://www.sportingkc.com/news/sports-medicine-report-sporting-faces-off-against-galaxy-out-in-la-sept-27-2025",
-                "title": "Sporting faces off against Galaxy out in LA | Sept. 27, 2025",
-                "summary": "Ahead of their Saturday night match against the LA Galaxy, Sporting Kansas City lists Erik Thommy as questionable with a groin injury, while Andrew Brody, Tim Leibold, and Manu Garcia are out due to injuries. The Galaxy will be without Isaiah Parente (suspended) and Riqui Puig (knee), with Marco Reus and Christian Ramirez listed as questionable."
-            }
-        ]
-    },
-    "HEALTH": {
-        "final_summary": "The Office of Disease Prevention and Health Promotion (ODPHP) offers resources promoting physical activity for all Americans to improve health, including guidelines for healthy aging and support for older adults, and celebrates National Physical Fitness and Sports Month each May. Meanwhile, Prevent Blindness has designated September as Sports Eye Safety Month following a 33% increase in sports-related eye injuries in 2024, with over 43,300 cases reported and basketball having the highest incidence; the organization advises athletes to use protective eye guards with polycarbonate lenses meeting ASTM standards and provides free sports eye safety resources.",
-        "all_summary": [
-            {
-                "url": "https://odphp.health.gov/news/tag/physical-activity",
-                "title": "Physical Activity | odphp.health.gov",
-                "summary": "The Office of Disease Prevention and Health Promotion (ODPHP) provides resources and information promoting the importance of physical activity for all Americans, regardless of age or ability, to improve health and overall well-being. These resources include guidelines for healthy aging and support for older adults. ODPHP also celebrates National Physical Fitness and Sports Month each May."
-            },
-            {
-                "url": "https://preventblindness.org/sports-eye-safety-month-2025/",
-                "title": "Prevent Blindness Declares September as Sports Eye ...",
-                "summary": "Prevent Blindness has declared September as Sports Eye Safety Month following new data showing over 43,300 sports-related eye injuries were treated in the U.S. in 2024, a 33% increase from the previous year, with basketball having the highest rate of injuries. The organization recommends athletes wear protective eye guards with polycarbonate lenses that meet sport-specific ASTM standards, while also offering free resources and information on sports eye safety."
+                "url": "https://www.youtube.com/watch?v=Oeepx2ZLrCA",
+                "title": "How The AI Economy Could Collapse | Prof G Markets - YouTube",
+                "summary": "State and local governments are increasingly using artificial intelligence to enhance public service delivery, despite public concerns about the pace of implementation and issues of trust. Only half of residents are comfortable with governments utilizing AI for service delivery, with concerns revolving around security, accuracy, transparency, and fairness. To address these concerns, governments are encouraged to prioritize transparency, focus on digital maturity, and adopt a resident-first approach.\n"
             }
         ]
     }

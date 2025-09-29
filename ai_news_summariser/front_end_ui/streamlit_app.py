@@ -16,7 +16,7 @@ from configs import FE_ConfigModel
 
 fe_config = FE_ConfigModel.from_json_file("front_end_ui/configs/fe_config.json")
 
-GENRES = ["Politics", "Technology", "AI", "Sports", "Business", "Health"]
+GENRES = fe_config.genres
 
 # Genre colors for visual distinction
 GENRE_COLORS = {
@@ -292,7 +292,7 @@ def render_genre_timeline(grouped_articles):
     
 def stream_from_api(url, msg_queue, stop_event, params):
     """Background thread that streams data and sends it to the queue."""
-    query_param = ",".join(params['genres']).strip(",")
+    query_param = ",".join(fe_config.genres if len(params['genres']) == 0 else (params['genres'])).strip(",")
     
     # Use a try-except block to handle connection errors gracefully
     try:
@@ -405,7 +405,7 @@ def main():
     st.title("🧠 AI News Summariser")
 
     # Genre chips
-    selected_genres = st.multiselect("Select Genres", GENRES, default=["AI"])
+    selected_genres = st.multiselect("Select Genres", GENRES, default=GENRES[0])
     url = f"{fe_config.base_url}:{fe_config.port}{fe_config.endpoints["news_summariser"].url}"# st.text_input("Streaming API URL", "http://localhost:8080/news_summariser")
 
     # Session state initialization

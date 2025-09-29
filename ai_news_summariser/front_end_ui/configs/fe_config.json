@@ -8,5 +8,10 @@
             "url" : "/news_summariser",
             "query_param" : ["query"]
         }
-    }
+    },
+    "genres": [
+        "Politics", "Sports", "Business", "Technology", "Science", "Health","Entertainment", 
+        "Crime", "World", "Environment", "Economy","Opinion", "Travel", 
+        "AI & Emerging Tech", "Local News"
+    ]
 }

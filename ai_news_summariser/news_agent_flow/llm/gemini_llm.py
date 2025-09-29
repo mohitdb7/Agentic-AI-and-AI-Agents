@@ -27,7 +27,7 @@ class GeminiCrewLLM:
     
     @staticmethod
     def llm_model() -> str:
-        f"{_gemini_llm.name}"
+        return f"{_gemini_llm.name}"
 
 
 class GeminiLangchainLLM:
@@ -48,4 +48,4 @@ class GeminiLangchainLLM:
     
     @staticmethod
     def llm_model() -> str:
-        f"{_gemini_llm.name}"
+        return f"{_gemini_llm.name}"

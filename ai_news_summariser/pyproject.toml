@@ -3,7 +3,7 @@ name = "ai-news-summariser"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = "==3.13.2"
+requires-python = ">=3.13.2"
 dependencies = [
     "beautifulsoup4==4.13.5",
     "crewai==0.193.0",

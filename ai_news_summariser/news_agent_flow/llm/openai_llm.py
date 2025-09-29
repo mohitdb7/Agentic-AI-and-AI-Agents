@@ -1,5 +1,5 @@
 from crewai import LLM
-from langchain_openai import OpenAI
+from langchain_community.chat_models import ChatOpenAI 
 from news_agent_flow.configs import AppConfigModel
 
 import os
@@ -27,7 +27,7 @@ class OpenAICrewLLM:
     
     @staticmethod
     def llm_model() -> str:
-        f"{_openai_llm.name}"
+        return f"{_openai_llm.name}"
 
 
 class OpenAILangchainLLM:
@@ -35,9 +35,9 @@ class OpenAILangchainLLM:
     OpenAI Langchain AI
     """
 
-    llm: OpenAI
+    llm: ChatOpenAI
     def __init__(self):
-        self.llm = OpenAI(
+        self.llm = ChatOpenAI(
             model=f"{_openai_llm.model.langchain}",
             api_key=os.getenv("OPENAI_API_KEY"))
     
@@ -46,4 +46,4 @@ class OpenAILangchainLLM:
     
     @staticmethod
     def llm_model() -> str:
-        f"{_openai_llm.name}"
+        return f"{_openai_llm.name}"

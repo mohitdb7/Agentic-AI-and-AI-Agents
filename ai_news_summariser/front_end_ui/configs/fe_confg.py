@@ -15,6 +15,7 @@ class FE_ConfigModel(BaseModel):
     base_url: str
     port: int
     endpoints: Dict[str, EndpointConfigModel]
+    genres: List[str]
 
     @staticmethod
     def from_json_file(file_path: str) -> "FE_ConfigModel":
