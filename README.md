@@ -8,13 +8,13 @@
 
 ## 🚀 Quick Start (One-Command Setup)
 
-The fastest way to get the entire stack—FastAPI backend, Streamlit frontend, and MongoDB cache—running locally is via Docker Compose.
+The fastest way to get the entire stack—FastAPI backend, Streamlit frontend, and MongoDB cache—running locally is using the **uv**.
 
-**Prerequisites:** Docker and Docker Compose (or Docker Desktop) installed.
+Here is the the tech doc for this project: **[AI News Summariser](https://www.linkedin.com/in/mohit-kumar-dubey/)**
 
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/mohitdb7/Agentic-AI-and-AI-Agents.git](https://github.com/mohitdb7/Agentic-AI-and-AI-Agents.git)
+git clone [https://github.com/mohitdb7/Agentic-AI-and-AI-Agents.git](https://mohitdubey60-1759037840631.atlassian.net/wiki/spaces/~71202056e8fb05e8a04bb4af2b6261c96eb4e2/pages/98308/AI+News+Summariser)
 cd Agentic-AI-and-AI-Agents/ai_news_summariser
 
 # 2. Configure API Keys
