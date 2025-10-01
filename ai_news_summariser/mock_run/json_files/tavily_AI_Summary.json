@@ -1,42 +1,52 @@
 [
     {
-        "url": "https://wng.org/opinions/the-rights-looming-war-over-ai-1759027561",
-        "title": "The right's looming war over AI - WORLD News Group",
-        "summary": "Conservatives are increasingly expressing concerns over the effects of artificial intelligence (AI) on society and children. At the recent National Conservatism Conference, figures such as Senator Josh Hawley criticized the power and ideology of AI companies and warned against the potential dangers of transhumanism, which they argue undermines individual worth and liberty. While some speakers denounced the business models of AI companies, others emphasized the potential to steer the development of AI through political action, highlighting the need for dialogue and caution in managing AI's growth."
+        "url": "https://www.theguardian.com/technology/2025/sep/02/ai-industry-pours-millions-into-politics",
+        "title": "AI industry pours millions into politics as lawsuits and feuds ...",
+        "summary": "The Artificial Intelligence (AI) industry is increasingly spending major sums in politics as they grapple with growing scrutiny, lawsuits, and policy debates, including a recent wrongful death lawsuit against OpenAI. As part of this, OpenAI and other AI giants are ramping up their lobbying investments and establishing Super Political Action Committees, with Silicon Valley reportedly planning to invest $100m in organizations that will counteract AI regulations. At the same time, there is growing recognition of AI's potential harms, amid lawsuits over AI's impacts on mental health and youth employment.\n"
     },
     {
-        "url": "https://www.pymnts.com/artificial-intelligence-2/2025/reflexive-ai-when-gen-ai-becomes-a-new-business-default/",
-        "title": "Reflexive AI: When Gen AI Becomes a New Business Default",
-        "summary": "The use of artificial intelligence (AI) has become an instinctive first step rather than a conscious decision in many industries, changing from a curiosity to an obligation. AI has been integrated into various sectors, including banking for sales and client management, and payments for fraud detection, with a survey finding 98% of U.S. product leaders believe generative AI will reshape operations within three years. However, risks of reflexive AI adoption persist, such as potential bias amplification and regulatory issues."
+        "url": "https://www.ai.gov/",
+        "title": "AI.Gov | President Trump's AI Strategy and Action Plan",
+        "summary": "The United States, under President Trump, has launched an AI Action Plan aimed at establishing global dominance in artificial intelligence. The plan features three pillars \u2013 accelerating innovation, building AI infrastructure, and leading international diplomacy and security. This includes various initiatives and executive orders such as promoting the use of trustworthy AI in the federal government, advancing AI education for American youth, and removing barriers to American leadership in AI."
     },
     {
-        "url": "https://www.bbc.com/news/articles/c07vmllz38jo",
-        "title": "AI could impact a million jobs in London, research suggests - BBC",
-        "summary": "Artificial Intelligence (AI) could potentially change nearly a million jobs in London, affecting various sectors including telemarketing, bookkeeping, data entry, fast food, warehousing, retail, paralegal work, and proofreading, according to research by online CV company LiveCareer UK. The study also suggests that women are at higher risk due to their occupation of more roles susceptible to AI's impact. Meanwhile, the NHS is using AI to improve workflows, like in Queen Elizabeth Hospital's pharmacy where AI is used to optimize medication dispensing."
+        "url": "https://www.bbc.com/news/topics/ce1qrvleleqt",
+        "title": "Artificial intelligence - BBC News",
+        "summary": "The UK government has stated that an AI tool developed by the Cabinet Office helped recover \u00a3500m lost to fraud, and Bollywood stars are taking legal action to protect their personality rights due to a surge in deepfake videos. Additionally, Nvidia plans to invest $100bn in AI company OpenAI, Oxford University gave students access to AI platform ChatGPT, and an AI factory is set to handle complex healthcare work.\n"
     },
     {
-        "url": "https://abcnews.go.com/Technology/wireStory/trumps-team-posting-ai-portraits-clicking-126032715",
-        "title": "Trump's team keeps posting AI portraits of him. We keep clicking",
-        "summary": "President Donald Trump and his administration have been using artificial intelligence (AI) to create and share fantastical images of the president on their social media accounts. These AI-generated images depict Trump in various heroic or powerful roles and, despite their clear artificiality, they continue to garner significant attention and engagement online. This trend reflects the growing appeal of AI-generated content, both for its ease of creation and its potential to reinforce subjective conceptions of reality."
+        "url": "https://www.washington.edu/news/2025/08/06/biased-ai-chatbots-swayed-peoples-political-views/",
+        "title": "With just a few messages, biased AI chatbots swayed ...",
+        "summary": "A study from the University of Washington found that individuals' political views were likely to lean towards the bias of the AI chatbot they interacted with. Participants who had more knowledge about AI systems were less likely to have their views influenced. The researchers highlight the importance of education about these systems to mitigate potential manipulation.\n"
     },
     {
-        "url": "https://www.cnbc.com/2025/09/29/anthropic-claude-ai-sonnet-4-5.html",
-        "title": "Anthropic launches Claude Sonnet 4.5, its latest AI model - CNBC",
-        "summary": "Anthropic has launched its latest Artificial Intelligence model, Claude Sonnet 4.5, which is more efficient at coding, using computers, and meeting business needs. The Amazon-backed startup, valued at $183 billion, claims that the new model excels in areas such as cybersecurity, finance, and research, and is superior at generating high-quality code and identifying code improvements. The company plans further model launches in the near future.\n"
+        "url": "https://nypost.com/2025/09/29/business/walmart-ceo-issues-ominous-warning-that-ai-will-change-literally-every-job/",
+        "title": "Walmart CEO issues ominous warning to US workers - New York Post",
+        "summary": "Walmart CEO Doug McMillon has stated that artificial intelligence (AI) is set to \"change literally every job\" within the company and may lead to job losses, while also creating new roles. The retailer plans to keep its workforce of 2.1 million workers stable over the next few years, despite automating more roles. Walmart has already started using AI within its supply chain and for gathering product trend data, and the company foresees a ripple effect of AI-related changes across its operations.\n"
     },
     {
-        "url": "https://www.yahoo.com/news/articles/trump-shared-then-deleted-ai-151909588.html",
-        "title": "Trump Shared And Then Deleted An AI-Generated Video Of Him ...",
-        "summary": "President Donald Trump recently shared an AI-generated video on his Truth Social page, presenting a false Fox News segment where he allegedly announces a new healthcare system involving \"medbed hospitals\" and a national medbed card for every citizen. Medbed is a term associated with a conspiracy theory circulating in QAnon circles that pertains to secret medical beds purported to cure any condition. The video was subsequently deleted from Trump's page."
+        "url": "https://www.forbes.com/ai/",
+        "title": "AI - Forbes",
+        "summary": "Spotify has tightened its policies on AI music, spam, impersonation, and fraud, resulting in 75 million \"spammy\" tracks being removed from its library. Google Photos expands its AI-powered conversational editing feature to all Android devices, allowing users to edit photos via voice or text commands. Tesla's Full-Self Driving Software faced criticism after a test showed the AI system ignoring some street signs and hitting a mannequin child."
     },
     {
-        "url": "https://www.techradar.com/pro/now-ai-is-everywhere-in-businesses-is-anyone-actually-using-it",
-        "title": "Now AI is everywhere in businesses, is anyone actually using it?",
-        "summary": "Atlassian's latest research reveals that daily AI use has nearly doubled in a year, making workers one-third more productive and saving around 1.4 hours per day. However, only 3% of organizations report significant gains in efficiency, with 2% seeing improvements in work quality and 4% noticing innovation improvements. The report also warns that AI could increase burnout unless workdays are restructured, as workers will spend more time on cognitively demanding tasks."
+        "url": "https://www.youtube.com/watch?v=M01WiKNkMhM",
+        "title": "AI market bubble concerns grow, plus the government shutdown ...",
+        "summary": "Concerns over a potential AI market bubble are increasing, drawing comparisons to the Dot-Com crash. Meanwhile, gold prices continue to rise, surpassing $3,800 per ounce for the first time. Epistrophy Capital Research's Cory Johnson and senior markets reporter Ines Ferr\u00e9 provide analysis on the trends.\n"
     },
     {
-        "url": "https://www.youtube.com/watch?v=Oeepx2ZLrCA",
-        "title": "How The AI Economy Could Collapse | Prof G Markets - YouTube",
-        "summary": "State and local governments are increasingly using artificial intelligence to enhance public service delivery, despite public concerns about the pace of implementation and issues of trust. Only half of residents are comfortable with governments utilizing AI for service delivery, with concerns revolving around security, accuracy, transparency, and fairness. To address these concerns, governments are encouraged to prioritize transparency, focus on digital maturity, and adopt a resident-first approach.\n"
+        "url": "https://www.pbs.org/newshour/politics/trumps-team-keeps-posting-ai-portraits-of-him-and-we-keep-clicking",
+        "title": "Trump's team keeps posting AI portraits of him",
+        "summary": "Donald Trump and his administration are regularly posting artificially generated (AI) images of him on social media, crafting a heroic, yet fictional image of the ex-president. The AI photos are receiving substantial public reaction, feeding into the trend of AI-filtered self-representation in the digital age. Despite criticism and the potential undermining of presidential decorum, Trump's use of AI imagery is strategic, capitalising on the attention it garners."
+    },
+    {
+        "url": "https://federalnewsnetwork.com/artificial-intelligence/2025/09/white-house-officially-makes-ai-a-key-piece-of-its-government-efficiency-agenda/",
+        "title": "White House officially makes AI a key piece of its ...",
+        "summary": "The Trump administration is prioritizing artificial intelligence (AI) in its government efficiency agenda for fiscal year 2027 to streamline operations. U.S. Forest Service\u2019s modernization plans have delayed due to staffing losses. Furthermore, the Federal Bureau of Prisons abruptly ended its union contract with the American Federation of Government Employees, impacting the rights of over 30,000 correctional officers, while the IRS is making significant headway on IT modernization despite not decommissioning any legacy systems yet."
+    },
+    {
+        "url": "https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53-advancing-californias-world-leading-artificial-intelligence-industry/",
+        "title": "Governor Newsom signs SB 53, advancing California's world ...",
+        "summary": "California Governor Gavin Newsom has signed into law Senate Bill 53, the Transparency in Frontier Artificial Intelligence Act (TFAIA), established to provide online safety by creating boundaries for frontier artificial intelligence (AI) development. The legislation aims to incite public trust while encouraging innovation in AI by installing new requirements for frontier AI developers for transparency, innovation, safety, accountability, and responsiveness. This law indicates California's balance between fostering AI advancement and implementing laws to protect public safety, reconfirming California's position as a leader in the AI industry."
     }
 ]

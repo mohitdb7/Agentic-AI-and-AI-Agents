@@ -1,19 +1,19 @@
 {
     "log_expiry":{
         "days":0,
-        "hours":0,
-        "minutes":5
+        "hours":3,
+        "minutes":0
     },
     "storage" : {
         "mongo" : {
             "url": "mongodb://localhost",
             "port": 27017,
-            "row_expiry": 3600,
-            "is_active" : true
+            "row_expiry": 7200,
+            "is_active" : false
         },
         "local": {
-            "row_expiry": 3600,
-            "is_active": false
+            "row_expiry": 7200,
+            "is_active": true
         }
     },
     "stream_sequence": ["search_the_web", "summarise_the_news", "assign_genre", "final_genre_summary"],

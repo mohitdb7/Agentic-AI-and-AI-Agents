@@ -1,5 +1,5 @@
 from crewai import LLM
-from langchain_community.chat_models import ChatOpenAI 
+from langchain_openai import ChatOpenAI 
 from news_agent_flow.configs import AppConfigModel
 
 import os
